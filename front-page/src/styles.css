@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background: black;
+    color: white;
+}
+
+.fullpage{
+    border: 5px solid white;
+    flex-direction:row;
+    
+}
+
+.vitalsclipboard{
+    border:5px solid white;
+    height:50%;
+    width:50%;
+    /*float:right;*/
+    margin-left: 300;
+}
+
+.dialogue{
+    width: 500;
+   /* float:left;*/
+}
+
