@@ -1,4 +1,4 @@
 # CRWM
 Medical RPG
 
-By Max, Rebecca, Darius, Jake
+Authors: Max, Rebecca, Darius, Jake
