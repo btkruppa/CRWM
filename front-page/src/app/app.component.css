@@ -1,3 +1,23 @@
 body { 
     background: black;
 }
+
+.fullpage{
+    display:flex;
+    flex-direction:row;
+    border:3px solid white;
+}
+
+.dialogue{
+    width:50%;
+}
+
+.vitalsclipboard{
+    width:50%;
+    float:right;
+    border-left:3px solid white;
+}
+
+.clipboardsection{
+    border-top:3px solid white;
+}
