@@ -16,7 +16,7 @@ public class Player {
 	{
 		
 	}
-	public Player(int id, String email, String password, int score, String firstname, String lastname, String isdev) {
+	public Player(int id, String email, String password, String firstname, String lastname, int score, String isdev) {
 		super();
 		this.id = id;
 		Email = email;
@@ -27,13 +27,13 @@ public class Player {
 		this.isdev = isdev;
 	}
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="playerSequence")
+	@GeneratedValue(strategy=GenerationType.AUTO, generator="playerSequence")
 	@SequenceGenerator(allocationSize= 1,name="playerSequence",sequenceName="SQ_PLAYER_PK")
 	@Column(name="PLAYER_ID")
 	private int id;
 	@Column(name="EMAIL")
 	private String Email;
-	@Column(name="PASSWORD")
+	@Column(name="PLAYER_PASSWORD")
 	private String Password;
 	@Column(name="HIGH_SCORES")
 	private int Score;

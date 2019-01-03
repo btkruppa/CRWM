@@ -21,4 +21,5 @@ public class HibernateTest {
 		}
 		return HibernateTest.sesFac;
 	}
+
 }
