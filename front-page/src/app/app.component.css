@@ -6,10 +6,15 @@ body {
     display:flex;
     flex-direction:row;
     border:3px solid white;
+    height: 100vh;
 }
 
 .dialogue{
     width:50%;
+}
+
+.vitals{
+    height: 50vh;
 }
 
 .vitalsclipboard{
@@ -20,7 +25,10 @@ body {
 
 .clipboardsection{
     border-top:3px solid white;
+    height: 50vh;
 }
+
+
 
 /* .login{
     margin: auto;
