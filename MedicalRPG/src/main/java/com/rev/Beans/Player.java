@@ -16,7 +16,7 @@ public class Player {
 	{
 		
 	}
-	public Player(int id, String email, String password, int score, String firstname, String lastname, String isdev) {
+	public Player(int id, String email, String password, String firstname, String lastname, int score, String isdev) {
 		super();
 		this.id = id;
 		Email = email;

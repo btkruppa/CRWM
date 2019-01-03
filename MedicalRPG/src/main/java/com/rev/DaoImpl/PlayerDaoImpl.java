@@ -22,6 +22,7 @@ public class PlayerDaoImpl implements PlayerDao {
 		Player u = null;
 		try(Session s = sf.getCurrentSession())
 		{
+			
 			System.out.println(Single.instance().toString());
 			System.out.println(s.toString());
 			Transaction tx =s.beginTransaction();
@@ -37,27 +38,30 @@ public class PlayerDaoImpl implements PlayerDao {
 		List<Player> Players = new ArrayList<>();
 		try(Session s = sf.getCurrentSession())
 		{
-			;
+			
 			System.out.println(Single.instance().toString());
 			System.out.println(s.toString());
 			Transaction tx =s.beginTransaction();
 			Players = s.createQuery("From Player").getResultList();
 			System.out.println(Players);
 			tx.commit();
+			s.close();
 		}
 		return Players;
 	}
 
 	@Override
 	public void updatePlayer(Player player) {
-		// TODO Auto-generated method stub
+		// 
 		try(Session s = sf.getCurrentSession())
 		{
+			
 			System.out.println(Single.instance().toString());
 			System.out.println(s.toString());
 			Transaction tx =s.beginTransaction();
 			s.update(player);
 			tx.commit();
+			s.close();
 		}	
 	}
 
@@ -65,24 +69,28 @@ public class PlayerDaoImpl implements PlayerDao {
 	public void addPlayer(Player player) {
 		try(Session s = sf.getCurrentSession())
 		{
+			
 			System.out.println(Single.instance().toString());
 			System.out.println(s.toString());
 			Transaction tx =s.beginTransaction();
 			s.save(player);
 			tx.commit();
+			s.close();
 		}		
 	}
 
 	@Override
 	public void deletePlayer(Player player) {
-		// TODO Auto-generated method stub
+		// 
 		try(Session s = sf.getCurrentSession())
 		{
+			
 			System.out.println(Single.instance().toString());
 			System.out.println(s.toString());
 			Transaction tx =s.beginTransaction();
 			s.delete(player);
 			tx.commit();
+			s.close();
 		}		
 	}
 }

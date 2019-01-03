@@ -21,10 +21,10 @@ public class AuthenticationService {
 		if(user != null && pass != null)
 		{
 			for(Player p : playList){
-				System.out.println(playList);
 				if(user.equals(p.getEmail()) && pass.equals(p.getPassword()))
 				{					
 					play = p;
+					return play;
 				}
 			}
 		}
