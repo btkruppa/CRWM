@@ -12,7 +12,8 @@ public class TestRun {
 	public static void main (String[] args) {
 		Single.instance().Dummy();
 		PlayerDao use = new PlayerDaoImpl();
-		System.out.println(use.getallPlayers());		
+		//System.out.println(use.getallPlayers());	
+		System.out.println(use.getPlayerbyID(10200));
 	}
 
 }
