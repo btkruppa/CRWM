@@ -16,5 +16,9 @@
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<mapping class="com.rev.Beans.Player"></mapping>
+		<mapping class="com.rev.Beans.Disease"></mapping>
+		<mapping class="com.rev.Beans.LeaderBoard"></mapping>
+		<mapping class="com.rev.Beans.Patients"></mapping>
+		<mapping class="com.rev.Beans.Symptom"></mapping>
 	</session-factory>
 </hibernate-configuration>

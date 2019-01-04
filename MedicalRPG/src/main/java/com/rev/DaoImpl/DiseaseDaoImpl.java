@@ -7,69 +7,68 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import com.rev.Beans.Player;
-import com.rev.Dao.PlayerDao;
+import com.rev.Beans.Disease;
+import com.rev.Dao.DiseaseDao;
 import com.rev.Hibernate.HibernateTest;
-import com.rev.Singleton.Single;
 
-public class PlayerDaoImpl implements PlayerDao {
+public class DiseaseDaoImpl implements DiseaseDao {
 
-	// Session factory to obtain session
 	public SessionFactory sf = HibernateTest.getSession();
 
 	@Override
-	public Player getPlayerbyID(int id) {
-		Player u = null;
+	public Disease getDiseasebyID(int id) {
+		Disease d = null;
 		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
-			u = (Player) s.get(Player.class, id);
+			d = (Disease) s.get(Disease.class, id);
 			tx.commit();
 			s.close();
 		}
-		return u;
+		return d;
 	}
 
 	@Override
-	public List<Player> getallPlayers() {
-		List<Player> players = new ArrayList<>();
-		try (Session s = sf.getCurrentSession()) {
+	public List<Disease> getAllDiseases() {
+		List<Disease> diseases = new ArrayList<>();
+		try (Session s = sf.getCurrentSession()){
 			Transaction tx = s.beginTransaction();
-			players = s.createQuery("from Player").getResultList();
+			diseases = s.createQuery("from Disease").getResultList();
 			tx.commit();
 			s.close();
 		}
-		return players;
+		return diseases;
 	}
 
 	@Override
-	public void updatePlayer(Player player) {
-		try (Session s = sf.getCurrentSession()) {
+	public void updateDisease(Disease disease) {
+		try(Session s = sf.getCurrentSession()){
 			Transaction tx = s.beginTransaction();
 			//using s.update(object) until we need to do s.merge(object)
-			s.update(player);
+			s.update(disease);
+			tx.commit();
+			s.close();
+		}
+
+	}
+
+	@Override
+	public void addDisease(Disease disease) {
+		try (Session s = sf.getCurrentSession()){
+			Transaction tx = s.beginTransaction();
+			s.persist(disease);
 			tx.commit();
 			s.close();
 		}
 	}
 
 	@Override
-	public void addPlayer(Player player) {
-		try (Session s = sf.getCurrentSession()) {
+	public void deleteDisease(Disease disease) {
+		try(Session s = sf.getCurrentSession()){
 			Transaction tx = s.beginTransaction();
-			s.persist(player);
+			s.delete(disease);
 			tx.commit();
 			s.close();
 		}
 	}
 
-	@Override
-	public void deletePlayer(Player player) {
-		//
-		try (Session s = sf.getCurrentSession()) {
-			Transaction tx = s.beginTransaction();
-			s.delete(player);
-			tx.commit();
-			s.close();
-		}
-	}
 }
