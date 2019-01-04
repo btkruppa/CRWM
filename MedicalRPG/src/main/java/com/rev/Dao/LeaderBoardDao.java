@@ -6,7 +6,7 @@ import com.rev.Beans.LeaderBoard;
 
 public interface LeaderBoardDao {
 	public LeaderBoard getLeaderBoardbyID(int id);
-	public List<LeaderBoard> getallLeaderBoards();
+	public List<LeaderBoard> getAllLeaderBoards();
 	public void updateLeaderBoard(LeaderBoard leaderBoard);
 	public void addLeaderBoard(LeaderBoard leaderBoard);
 	public void deleteLeaderBoard(LeaderBoard leaderBoard);
