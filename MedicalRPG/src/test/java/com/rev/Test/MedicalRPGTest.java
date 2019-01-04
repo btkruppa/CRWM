@@ -12,21 +12,28 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.rev.Beans.Credentials;
+import com.rev.Beans.Disease;
 import com.rev.Beans.Player;
+import com.rev.Beans.Symptom;
 import com.rev.Dao.PlayerDao;
 import com.rev.DaoImpl.PlayerDaoImpl;
 import com.rev.Service.AuthenticationService;
 
 public class MedicalRPGTest {
-
+	    private static SessionFactory sessionFactory;
+	    private Session session;
 	private static final PlayerDao playerDao = new PlayerDaoImpl();
 
 	@Rule
@@ -54,7 +61,7 @@ public class MedicalRPGTest {
 		Credentials cred = new Credentials("hdurrell0@indigo.com","yTXA0LXDON");
 		Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false");
 		assertEquals(p,auth.isValidUser(cred));
-	}*/
+	}
 	@Test
 	public void testIsValidUserIncorrectEmail() {
 		AuthenticationService auth = new AuthenticationService();

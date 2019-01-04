@@ -1,16 +1,12 @@
 package com.rev.Service;
 
-
 import java.util.List;
 
 import com.rev.Beans.Credentials;
 import com.rev.Beans.Player;
 import com.rev.DaoImpl.PlayerDaoImpl;
 
-
-
 public class AuthenticationService {
-	//public EmployeeDao empl = new EmployeeDaoImpl();
 	public Player isValidUser(Credentials cred)
 	{
 		PlayerDaoImpl playin = new PlayerDaoImpl();

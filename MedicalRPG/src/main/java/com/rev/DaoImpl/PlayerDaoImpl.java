@@ -21,8 +21,7 @@ public class PlayerDaoImpl implements PlayerDao {
 	public Player getPlayerbyID(int id) {
 		Player u = null;
 		try(Session s = sf.getCurrentSession())
-		{
-			
+		{			
 			System.out.println(Single.instance().toString());
 			System.out.println(s.toString());
 			Transaction tx =s.beginTransaction();
@@ -37,8 +36,7 @@ public class PlayerDaoImpl implements PlayerDao {
 	public List<Player> getallPlayers() {
 		List<Player> Players = new ArrayList<>();
 		try(Session s = sf.getCurrentSession())
-		{
-			
+		{			
 			System.out.println(Single.instance().toString());
 			System.out.println(s.toString());
 			Transaction tx =s.beginTransaction();
@@ -54,8 +52,7 @@ public class PlayerDaoImpl implements PlayerDao {
 	public void updatePlayer(Player player) {
 		// 
 		try(Session s = sf.getCurrentSession())
-		{
-			
+		{			
 			System.out.println(Single.instance().toString());
 			System.out.println(s.toString());
 			Transaction tx =s.beginTransaction();
@@ -69,7 +66,6 @@ public class PlayerDaoImpl implements PlayerDao {
 	public void addPlayer(Player player) {
 		try(Session s = sf.getCurrentSession())
 		{
-			
 			System.out.println(Single.instance().toString());
 			System.out.println(s.toString());
 			Transaction tx =s.beginTransaction();
@@ -83,8 +79,7 @@ public class PlayerDaoImpl implements PlayerDao {
 	public void deletePlayer(Player player) {
 		// 
 		try(Session s = sf.getCurrentSession())
-		{
-			
+		{			
 			System.out.println(Single.instance().toString());
 			System.out.println(s.toString());
 			Transaction tx =s.beginTransaction();
