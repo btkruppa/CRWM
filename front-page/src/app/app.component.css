@@ -1,0 +1,38 @@
+body { 
+    background: black;
+}
+
+.fullpage{
+    display:flex;
+    flex-direction:row;
+    border:3px solid white;
+    height: 100vh;
+}
+
+.dialogue{
+    width:50%;
+}
+
+.vitals{
+    height: 50vh;
+}
+
+.vitalsclipboard{
+    width:50%;
+    float:right;
+    border-left:3px solid white;
+}
+
+.clipboardsection{
+    border-top:3px solid white;
+    height: 50vh;
+}
+
+
+
+/* .login{
+    margin: auto;
+    width: 20%;
+    float:center;
+    border: 3px solid white;
+} */
