@@ -12,13 +12,14 @@ import com.rev.Dao.SymptomDao;
 import com.rev.Hibernate.HibernateTest;
 
 public class SymptomDaoImpl implements SymptomDao {
-
-	SessionFactory sf = HibernateTest.getSession();
 	
+	// Session factory to obtain session
+	SessionFactory sf = HibernateTest.getSession();
+
 	@Override
 	public Symptom getSymptombyID(int id) {
 		Symptom sp = null;
-		try(Session s = sf.getCurrentSession()){
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			sp = (Symptom) s.get(Symptom.class, id);
 			tx.commit();
@@ -30,7 +31,7 @@ public class SymptomDaoImpl implements SymptomDao {
 	@Override
 	public List<Symptom> getAllSymptoms() {
 		List<Symptom> ls = new ArrayList<>();
-		try(Session s = sf.getCurrentSession()){
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			ls = s.createQuery("from Symptom").getResultList();
 			tx.commit();
@@ -41,7 +42,7 @@ public class SymptomDaoImpl implements SymptomDao {
 
 	@Override
 	public void updateSymptom(Symptom symptom) {
-		try(Session s = sf.getCurrentSession()){
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			s.update(symptom);
 			tx.commit();
@@ -51,7 +52,7 @@ public class SymptomDaoImpl implements SymptomDao {
 
 	@Override
 	public void addSymptom(Symptom symptom) {
-		try (Session s = sf.getCurrentSession()){
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			s.persist(symptom);
 			tx.commit();
@@ -61,7 +62,7 @@ public class SymptomDaoImpl implements SymptomDao {
 
 	@Override
 	public void deleteSymptom(Symptom symptom) {
-		try(Session s = sf.getCurrentSession()){
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			s.delete(symptom);
 			tx.commit();

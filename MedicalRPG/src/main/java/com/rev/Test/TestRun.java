@@ -1,5 +1,5 @@
 package com.rev.Test;
-
+//change these package names to match naming conventions
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

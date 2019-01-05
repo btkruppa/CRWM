@@ -13,6 +13,7 @@ import com.rev.Hibernate.HibernateTest;
 
 public class DiseaseDaoImpl implements DiseaseDao {
 
+	// Session factory to obtain session
 	public SessionFactory sf = HibernateTest.getSession();
 
 	@Override
@@ -30,7 +31,7 @@ public class DiseaseDaoImpl implements DiseaseDao {
 	@Override
 	public List<Disease> getAllDiseases() {
 		List<Disease> diseases = new ArrayList<>();
-		try (Session s = sf.getCurrentSession()){
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			diseases = s.createQuery("from Disease").getResultList();
 			tx.commit();
@@ -41,9 +42,9 @@ public class DiseaseDaoImpl implements DiseaseDao {
 
 	@Override
 	public void updateDisease(Disease disease) {
-		try(Session s = sf.getCurrentSession()){
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
-			//using s.update(object) until we need to do s.merge(object)
+			// using s.update(object) until we need to do s.merge(object)
 			s.update(disease);
 			tx.commit();
 			s.close();
@@ -53,7 +54,7 @@ public class DiseaseDaoImpl implements DiseaseDao {
 
 	@Override
 	public void addDisease(Disease disease) {
-		try (Session s = sf.getCurrentSession()){
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			s.persist(disease);
 			tx.commit();
@@ -63,7 +64,7 @@ public class DiseaseDaoImpl implements DiseaseDao {
 
 	@Override
 	public void deleteDisease(Disease disease) {
-		try(Session s = sf.getCurrentSession()){
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			s.delete(disease);
 			tx.commit();

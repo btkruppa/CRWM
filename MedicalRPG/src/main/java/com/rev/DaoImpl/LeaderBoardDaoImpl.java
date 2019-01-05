@@ -12,13 +12,14 @@ import com.rev.Dao.LeaderBoardDao;
 import com.rev.Hibernate.HibernateTest;
 
 public class LeaderBoardDaoImpl implements LeaderBoardDao {
-	
+
+	// Session factory to obtain session
 	public SessionFactory sf = HibernateTest.getSession();
 
 	@Override
 	public LeaderBoard getLeaderBoardbyID(int id) {
 		LeaderBoard lb = null;
-		try (Session s = sf.getCurrentSession()){
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			lb = (LeaderBoard) s.get(LeaderBoard.class, id);
 			tx.commit();
@@ -30,7 +31,7 @@ public class LeaderBoardDaoImpl implements LeaderBoardDao {
 	@Override
 	public List<LeaderBoard> getAllLeaderBoards() {
 		List<LeaderBoard> lbs = new ArrayList<>();
-		try(Session s = sf.getCurrentSession()){
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			lbs = s.createQuery("from LeaderBoard").getResultList();
 			tx.commit();
@@ -41,7 +42,7 @@ public class LeaderBoardDaoImpl implements LeaderBoardDao {
 
 	@Override
 	public void updateLeaderBoard(LeaderBoard leaderBoard) {
-		try(Session s = sf.getCurrentSession()){
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			s.update(leaderBoard);
 			tx.commit();
@@ -51,7 +52,7 @@ public class LeaderBoardDaoImpl implements LeaderBoardDao {
 
 	@Override
 	public void addLeaderBoard(LeaderBoard leaderBoard) {
-		try(Session s = sf.getCurrentSession()){
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			s.persist(leaderBoard);
 			tx.commit();
@@ -61,7 +62,7 @@ public class LeaderBoardDaoImpl implements LeaderBoardDao {
 
 	@Override
 	public void deleteLeaderBoard(LeaderBoard leaderBoard) {
-		try(Session s = sf.getCurrentSession()){
+		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
 			s.delete(leaderBoard);
 			tx.commit();

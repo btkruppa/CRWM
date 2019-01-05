@@ -5,9 +5,10 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateTest {
 	
+//	"What is this class for?" -Max
+	
 	private static SessionFactory sesFac;
 	
-
 	public static SessionFactory getSession()
 	{
 		if(HibernateTest.sesFac == null)
