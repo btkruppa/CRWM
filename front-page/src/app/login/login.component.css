@@ -1,9 +1,9 @@
-.login, .register{
-    margin: auto;
-    padding: 10px;
-    width: 20%;
-    float:center;
-    text-align: center;
-    border: 3px solid white;
-    z-index: 1;
+@font-face{
+    font-family:"Arcade";
+    src: url("C:\Program Files\Git\repos\CRWM\ARCADECLASSIC.ttf") format("truetype");
+}
+form{
+    color:black;
+    margin-left: 25%;
+    font-family:"Arcade";
 }

@@ -17,7 +17,7 @@ public class PatientsDaoImpl implements PatientsDao {
 	SessionFactory sf = HibernateUtil.getSessionFactory();
 
 	@Override
-	public Patients getPatientsbyID(int id) {
+	public Patients getPatientsByID(int id) {
 		Patients p = null;
 		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();

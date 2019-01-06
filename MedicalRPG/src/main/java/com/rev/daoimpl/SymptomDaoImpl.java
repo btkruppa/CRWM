@@ -17,7 +17,7 @@ public class SymptomDaoImpl implements SymptomDao {
 	SessionFactory sf = HibernateUtil.getSessionFactory();
 
 	@Override
-	public Symptom getSymptombyID(int id) {
+	public Symptom getSymptomByID(int id) {
 		Symptom sp = null;
 		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
