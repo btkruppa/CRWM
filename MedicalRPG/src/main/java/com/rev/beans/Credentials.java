@@ -1,23 +1,26 @@
 package com.rev.beans;
 
+///Summary///
+///This object will take in the user input
+///Taking in the username
 public class Credentials {
 
-public Credentials( String email, String password) {
+public Credentials( String username, String password) {
 		super();
 
-		Email = email;
+		Username = username;
 		Password = password;
 	}
 
-private String Email;
+private String Username;
 private String Password;
 
 
-public String getEmail() {
-	return Email;
+public String getUsername() {
+	return Username;
 }
-public void setEmail(String email) {
-	Email = email;
+public void setEmail(String username) {
+	Username = username;
 }
 public String getPassword() {
 	return Password;
@@ -29,7 +32,7 @@ public void setPassword(String password) {
 public int hashCode() {
 	final int prime = 31;
 	int result = 1;
-	result = prime * result + ((Email == null) ? 0 : Email.hashCode());
+	result = prime * result + ((Username == null) ? 0 : Username.hashCode());
 	result = prime * result + ((Password == null) ? 0 : Password.hashCode());
 	return result;
 }
@@ -42,10 +45,10 @@ public boolean equals(Object obj) {
 	if (getClass() != obj.getClass())
 		return false;
 	Credentials other = (Credentials) obj;
-	if (Email == null) {
-		if (other.Email != null)
+	if (Username == null) {
+		if (other.Username != null)
 			return false;
-	} else if (!Email.equals(other.Email))
+	} else if (!Username.equals(other.Username))
 		return false;
 
 	if (Password == null) {
@@ -57,6 +60,6 @@ public boolean equals(Object obj) {
 }
 @Override
 public String toString() {
-	return "Credentials [Email=" + Email + ", Password=" + Password + "]";
+	return "Credentials [Email=" + Username + ", Password=" + Password + "]";
 }
 }

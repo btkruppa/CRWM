@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+//@NamedQueries(value = { @NamedQuery(name = "", query = "") })
 @Entity
 @Table(name="PLAYER")
 public class Player {
@@ -16,10 +17,10 @@ public class Player {
 	{
 		
 	}
-	public Player(int id, String email, String password, String firstname, String lastname, int score, String isdev) {
+	public Player(int id, String username, String password, String firstname, String lastname, int score, String isdev) {
 		super();
 		this.id = id;
-		Email = email;
+		Username = username;
 		Password = password;
 		Score = score;
 		Firstname = firstname;
@@ -31,8 +32,8 @@ public class Player {
 	@SequenceGenerator(allocationSize= 1,name="playerSequence",sequenceName="SQ_PLAYER_PK")
 	@Column(name="PLAYER_ID")
 	private int id;
-	@Column(name="EMAIL")
-	private String Email;
+	@Column(name="USERNAME")
+	private String Username;
 	@Column(name="PLAYER_PASSWORD")
 	private String Password;
 	@Column(name="HIGH_SCORES")
@@ -49,11 +50,11 @@ public class Player {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getEmail() {
-		return Email;
+	public String getUsername() {
+		return Username;
 	}
-	public void setEmail(String email) {
-		Email = email;
+	public void setUsername(String username) {
+		Username = username;
 	}
 	public String getPassword() {
 		return Password;
@@ -89,7 +90,7 @@ public class Player {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Email == null) ? 0 : Email.hashCode());
+		result = prime * result + ((Username == null) ? 0 : Username.hashCode());
 		result = prime * result + ((Firstname == null) ? 0 : Firstname.hashCode());
 		result = prime * result + ((Lastname == null) ? 0 : Lastname.hashCode());
 		result = prime * result + ((Password == null) ? 0 : Password.hashCode());
@@ -107,10 +108,10 @@ public class Player {
 		if (getClass() != obj.getClass())
 			return false;
 		Player other = (Player) obj;
-		if (Email == null) {
-			if (other.Email != null)
+		if (Username == null) {
+			if (other.Username != null)
 				return false;
-		} else if (!Email.equals(other.Email))
+		} else if (!Username.equals(other.Username))
 			return false;
 		if (Firstname == null) {
 			if (other.Firstname != null)
@@ -140,7 +141,7 @@ public class Player {
 	}
 	@Override
 	public String toString() {
-		return "Player [id=" + id + ", Email=" + Email + ", Password=" + Password + ", Score=" + Score + ", Firstname="
+		return "Player [id=" + id + ", Username=" + Username + ", Password=" + Password + ", Score=" + Score + ", Firstname="
 				+ Firstname + ", Lastname=" + Lastname + ", isdev=" + isdev + "]";
 	}
 }
