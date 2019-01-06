@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+///Summary///
+///Patient object takes in patient table information from the sql
+
 @Entity
 @Table(name="PATIENT")
 public class Patients {
