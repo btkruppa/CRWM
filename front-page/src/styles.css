@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-    background: black;
-    color: white;
+
+@font-face{
+    font-family:"Arcade";
+    src: url("assets/ARCADECLASSIC.TTF") format("truetype");
 }
 
+body{
+    color:white;
+    font-family:"Arcade";
+}
