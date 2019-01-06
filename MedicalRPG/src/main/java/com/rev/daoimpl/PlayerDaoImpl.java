@@ -9,15 +9,15 @@ import org.hibernate.Transaction;
 
 import com.rev.beans.Player;
 import com.rev.dao.PlayerDao;
-import com.rev.hibernate.HibernateTest;
+import com.rev.util.HibernateUtil;
 
 public class PlayerDaoImpl implements PlayerDao {
 
 	// Session factory to obtain session
-	public SessionFactory sf = HibernateTest.getSession();
+	public SessionFactory sf = HibernateUtil.getSessionFactory();
 
 	@Override
-	public Player getPlayerbyID(int id) {
+	public Player getPlayerByID(int id) {
 		Player u = null;
 		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();

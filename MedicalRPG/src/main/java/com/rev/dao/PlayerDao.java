@@ -5,7 +5,7 @@ import java.util.List;
 import com.rev.beans.Player;
 
 public interface PlayerDao {
-	public Player getPlayerbyID(int id);
+	public Player getPlayerByID(int id);
 	public List<Player> getallPlayers();
 	public void updatePlayer(Player player);
 	public void addPlayer(Player player);

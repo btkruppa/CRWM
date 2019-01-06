@@ -9,7 +9,7 @@ import org.hibernate.Transaction;
 
 import com.rev.beans.Symptom;
 import com.rev.dao.SymptomDao;
-import com.rev.hibernate.HibernateUtil;
+import com.rev.util.HibernateUtil;
 
 public class SymptomDaoImpl implements SymptomDao {
 	
@@ -17,7 +17,7 @@ public class SymptomDaoImpl implements SymptomDao {
 	SessionFactory sf = HibernateUtil.getSessionFactory();
 
 	@Override
-	public Symptom getSymptombyID(int id) {
+	public Symptom getSymptomByID(int id) {
 		Symptom sp = null;
 		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();

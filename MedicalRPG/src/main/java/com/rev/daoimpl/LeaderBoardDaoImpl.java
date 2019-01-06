@@ -1,6 +1,7 @@
 package com.rev.daoimpl;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.hibernate.Session;
@@ -9,7 +10,7 @@ import org.hibernate.Transaction;
 
 import com.rev.beans.LeaderBoard;
 import com.rev.dao.LeaderBoardDao;
-import com.rev.hibernate.HibernateUtil;
+import com.rev.util.HibernateUtil;
 
 public class LeaderBoardDaoImpl implements LeaderBoardDao {
 

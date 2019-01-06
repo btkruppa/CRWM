@@ -25,5 +25,9 @@ import { Globals } from './global';
   bootstrap: [AppComponent]
 })
 export class AppModule {
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> 70700b44bd4345d98922e4ec33ea5a368b33cabb

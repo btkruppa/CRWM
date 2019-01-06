@@ -1,6 +1,7 @@
 package com.rev.daoimpl;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.hibernate.Session;
@@ -9,11 +10,11 @@ import org.hibernate.Transaction;
 
 import com.rev.beans.Disease;
 import com.rev.dao.DiseaseDao;
-import com.rev.hibernate.HibernateTest;
+import com.rev.util.HibernateUtil;
 
 public class DiseaseDaoImpl implements DiseaseDao {
 
-	public SessionFactory sf = HibernateTest.getSession();
+	public SessionFactory sf = HibernateUtil.getSessionFactory();
 
 	@Override
 	public Disease getDiseasebyID(int id) {

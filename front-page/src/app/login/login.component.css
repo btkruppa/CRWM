@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 
+=======
+@font-face{
+    font-family:"Arcade";
+    src: url("C:\Program Files\Git\repos\CRWM\ARCADECLASSIC.ttf") format("truetype");
+}
+>>>>>>> 70700b44bd4345d98922e4ec33ea5a368b33cabb
 form{
     color:black;
     margin-left: 25%;
