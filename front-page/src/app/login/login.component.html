@@ -1,36 +1,44 @@
+<!-- <p>
+  login works!
+</p> -->
+
 <!-- code below will style a form for user to login / register -->
 
 <!-- http://warpdoor.com/content/images/2014/May/25931-shot2.jpg -->
-
-<body>
-  <div class="login-component">
-      <form action="Home.html" method="post" class="login">
-        <h3>Login</h3>
-        <input type="text" placeholder="username" required/>
-        <br/>
-        <input type="password" placeholder="password" required/>
-        <br />
-        <br />
-        <button>Login</button>
-        <br />
-        <p class="message">Need a new account?</p>
-        <a href="#">Register</a>
-      </form>
-      <form action="Home.html" method="post" class="register">
-        <h3>Register</h3>
-        <input type="text" placeholder="username" required/>
-        <br/>
-        <input type="email" placeholder="email" required />
-        <br/>
-        <input type="password" placeholder="newpassword"  required/>
-        <br/>
-        <input type="password" placeholder="confirmpassword"  required />
-        <br />
-        <br />      
-        <button>Get Started</button>
-        <br />
-        <p class="message">Already Registered?</p>
-        <a href="#">Login</a>
-      </form>
-  </div>
-</body>
+<div class="login-page">
+    <div class="form">
+        <form action="Home.html" method="post" class="register-form">
+          <h2 style="color:white; margin-left:13%; font-size:50px; float:center">Register</h2>
+            <span>
+            <input type="text" placeholder="username" required/>
+            <input type="email" placeholder="email" required />
+            </span>
+            <br>
+            <br>
+            <span>
+            <input type="password" placeholder="newpassword"  required/>
+            <input type="password" placeholder="confirmpassword"  required />
+            </span>
+            <br />
+            <br>
+            <button (click)="this.globals.isOn = false" style="width:68.5%">Get Started</button>
+            <p class="message" style="color:white">Already Registered: <a href="#">Login</a></p>
+        </form>
+        <form action="Home.html" method="post" class="login-form">
+              <h2 style="color:white; margin-left:19%; font-size:50px">Login</h2>
+            <input type="text" placeholder="username" required/>
+            <input type="password" placeholder="password" required/>
+            <br />
+            <br>
+            <button (click)="this.globals.isOn = false" style="width:68.5%">Login</button>
+            <p class="message" style="color:white">Need a new account: <a href="#">Register</a></p>
+        </form>
+    </div>
+</div>
+<!-- <script src="../js/Login.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $('.message a').click(function () {
+        $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+    });
+</script> -->

@@ -1,5 +1,10 @@
 <router-outlet></router-outlet>
-<div class="fullpage">
+<div class="center">
+<img src="/assets/Caduceus.jpg" style="width:100px; height:100px">
+<h1 style="font-size:80px; color:red">DIAGNOSIS</h1>
+<img src="/assets/Caduceus.jpg" style="width:100px; height:100px">
+</div>
+<div class="fullpage" *ngIf="!this.globals.isOn">
   <div class="dialogue">
   <app-dialogue></app-dialogue>
   </div>
@@ -12,6 +17,7 @@
     </div>
   </div>
 </div>
-<div class="login">
+<div class="login" *ngIf="this.globals.isOn">
   <app-login></app-login>
 </div>
+<button (click)="this.globals.isOn = true" *ngIf="!this.globals.isOn" style="margin-left:45vw; color:black;">View Login</button>
