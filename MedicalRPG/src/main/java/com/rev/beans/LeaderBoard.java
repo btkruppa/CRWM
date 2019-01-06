@@ -1,5 +1,7 @@
 package com.rev.beans;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -7,25 +9,27 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.ForeignKey;
+import javax.persistence.ConstraintMode;
 
 @Entity
 @Table(name="LEADERBOARD")
 public class LeaderBoard {
 
-	public LeaderBoard(int leaderBoard_ID, int uSER_ID, int sCORE) {
+	public LeaderBoard(int leaderBoard_ID, Set<String> user_ID, int score) {
 		super();
 		LeaderBoard_ID = leaderBoard_ID;
-		USER_ID = uSER_ID;
-		SCORE = sCORE;
+		Username_ID = user_ID;
+		SCORE = score;
 	}
 	public LeaderBoard() {
 	}
 	@Id
 	@Column(name="LEADERBOARD_ID")
 	private int LeaderBoard_ID;
-	@OneToMany(fetch=FetchType.LAZY)
-	@JoinColumn(name="USER_ID")
-	private int USER_ID;
+	@OneToMany(fetch=FetchType.EAGER)
+	@JoinColumn(name="USERNAME",foreignKey=@ForeignKey(ConstraintMode.NO_CONSTRAINT))
+	private Set<String> Username_ID;
 	@Column(name="SCORE")
 	private int SCORE;
 	public  int getLeaderBoard_ID() {
@@ -33,12 +37,6 @@ public class LeaderBoard {
 	}
 	public void setLeaderBoard_ID(int leaderBoard_ID) {
 		LeaderBoard_ID = leaderBoard_ID;
-	}
-	public int getUSER_ID() {
-		return USER_ID;
-	}
-	public  void setUSER_ID(int uSER_ID) {
-		USER_ID = uSER_ID;
 	}
 	public  int getSCORE() {
 		return SCORE;
@@ -52,7 +50,7 @@ public class LeaderBoard {
 		int result = 1;
 		result = prime * result + LeaderBoard_ID;
 		result = prime * result + SCORE;
-		result = prime * result + USER_ID;
+		result = prime * result + ((Username_ID == null) ? 0 : Username_ID.hashCode());
 		return result;
 	}
 	@Override
@@ -68,12 +66,21 @@ public class LeaderBoard {
 			return false;
 		if (SCORE != other.SCORE)
 			return false;
-		if (USER_ID != other.USER_ID)
+		if (Username_ID == null) {
+			if (other.Username_ID != null)
+				return false;
+		} else if (!Username_ID.equals(other.Username_ID))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "LeaderBoard [LeaderBoard_ID=" + LeaderBoard_ID + ", USER_ID=" + USER_ID + ", SCORE=" + SCORE + "]";
+		return "LeaderBoard [LeaderBoard_ID=" + LeaderBoard_ID + ", User_ID=" + Username_ID + ", SCORE=" + SCORE + "]";
+	}
+	public Set<String> getUser_ID() {
+		return Username_ID;
+	}
+	public void setUser_ID(Set<String> user_ID) {
+		Username_ID = user_ID;
 	}
 }

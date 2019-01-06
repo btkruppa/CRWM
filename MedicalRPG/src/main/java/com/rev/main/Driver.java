@@ -32,7 +32,7 @@ public class Driver {
 		System.out.println(p3);
 		System.out.println(s.save(p3)); // adds a new one
 		Player p4 = s.get(Player.class, 10360);
-		p4.setEmail("Boom.com");
+//		p4.setEmail("Boom.com");
 		tx.commit();
 		s.close();
 	}

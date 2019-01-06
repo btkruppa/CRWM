@@ -29,7 +29,7 @@ public class PlayerDaoImpl implements PlayerDao {
 	}
 
 	@Override
-	public List<Player> getAllPlayers() {
+	public List<Player> getallPlayers() {
 		List<Player> players = new ArrayList<>();
 		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
@@ -44,7 +44,7 @@ public class PlayerDaoImpl implements PlayerDao {
 	public void updatePlayer(Player player) {
 		try (Session s = sf.getCurrentSession()) {
 			Transaction tx = s.beginTransaction();
-			// using s.update(object) until we need to do s.merge(object)
+			//using s.update(object) until we need to do s.merge(object)
 			s.update(player);
 			tx.commit();
 			s.close();
