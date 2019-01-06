@@ -12,6 +12,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.JoinColumn;
 
+///Summary///
+///Disease will take in information 
 @Entity
 @Table(name="DISEASE")
 public class Disease {

@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+///Summary///
+///Player information from login goes into here
+
 //@NamedQueries(value = { @NamedQuery(name = "", query = "") })
 @Entity
 @Table(name="PLAYER")
