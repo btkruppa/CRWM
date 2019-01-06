@@ -1,4 +1,4 @@
-package com.rev.hibernate;
+package com.rev.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -14,7 +14,7 @@ public class HibernateUtil {
 			c.setProperty("hibernate.connection.username", System.getenv("MedGame_DB_Username"));
 			c.setProperty("hibernate.connection.password", System.getenv("MedGame_DB_Password"));
 			c.setProperty("hibernate.connection.url", System.getenv("MedGame_DB_Url"));
-			c.configure();			
+			c.configure();
 			HibernateUtil.sessionFactory = c.buildSessionFactory();
 		}
 		return HibernateUtil.sessionFactory;

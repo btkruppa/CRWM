@@ -9,7 +9,7 @@ import org.hibernate.Transaction;
 
 import com.rev.beans.Disease;
 import com.rev.dao.DiseaseDao;
-import com.rev.hibernate.HibernateUtil;
+import com.rev.util.HibernateUtil;
 
 public class DiseaseDaoImpl implements DiseaseDao {
 

@@ -9,7 +9,7 @@ import org.hibernate.Transaction;
 
 import com.rev.beans.Symptom;
 import com.rev.dao.SymptomDao;
-import com.rev.hibernate.HibernateUtil;
+import com.rev.util.HibernateUtil;
 
 public class SymptomDaoImpl implements SymptomDao {
 	

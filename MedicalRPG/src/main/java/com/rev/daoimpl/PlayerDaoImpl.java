@@ -9,7 +9,7 @@ import org.hibernate.Transaction;
 
 import com.rev.beans.Player;
 import com.rev.dao.PlayerDao;
-import com.rev.hibernate.HibernateUtil;
+import com.rev.util.HibernateUtil;
 
 public class PlayerDaoImpl implements PlayerDao {
 
