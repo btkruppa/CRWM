@@ -16,7 +16,7 @@ public class Driver {
 	public static void main(String[] args) {
 //		Single.instance().Dummy();
 		PlayerDao pd = new PlayerDaoImpl();
-		// System.out.println(use.getallPlayers());
+//		System.out.println(use.getallPlayers());
 		System.out.println(pd.getPlayerByID(10200));
 //		funWithSessions(sf);
 	}

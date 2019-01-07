@@ -1,3 +1,8 @@
+/*This .ts imports the Globals ts which contains the variable
+"isOn" which is used to show and hide the login page depending 
+on what is clicked*/
+
+
 import { Component, OnInit,Inject } from '@angular/core';
 import { Globals } from '../global';
 

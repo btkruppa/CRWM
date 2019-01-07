@@ -1,3 +1,6 @@
+/*This ts file outlines the constructor for the vitals component
+on the game page*/
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

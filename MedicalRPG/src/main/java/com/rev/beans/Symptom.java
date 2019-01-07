@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+<<<<<<< HEAD
 /**
  * Summary *
  * Takes in symptom from sql symptoms table
@@ -16,6 +17,11 @@ import javax.persistence.Table;
  * @author Darius
  */
 
+=======
+///Summary///
+///Takes in symptom from sql symptoms table
+///Use a join table to connect the many to many operation to Disease
+>>>>>>> dev
 
 @Entity
 @Table(name="SYMPTOMS")

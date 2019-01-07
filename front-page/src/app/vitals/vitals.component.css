@@ -1,0 +1,20 @@
+/**@author Jake Mulrnein*/
+.hearts{
+    display:flex;
+    margin-left:18%;
+    flex-direction:row;
+}
+
+.heartRate{
+    margin-left:5%;
+}
+
+.bp{
+    margin-left:10%;
+    float:right;
+}
+
+.rateandbp{
+    display:flex;
+    flex-direction:row;
+}

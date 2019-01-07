@@ -1,3 +1,9 @@
+/*@author Jake Mulrenin, Max Couch*/
+/**
+ * This is the ts file for the module of the app component
+ * all of the imports are found here, as well as the providers,
+ * bootstrapping, and declarations.
+ */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 

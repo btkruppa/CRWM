@@ -21,6 +21,9 @@ import javax.persistence.ForeignKey;
  */
 
 
+///Summary///
+///Player information from login goes into here
+
 //@NamedQueries(value = { @NamedQuery(name = "", query = "") })
 @Entity
 @Table(name="PLAYER")

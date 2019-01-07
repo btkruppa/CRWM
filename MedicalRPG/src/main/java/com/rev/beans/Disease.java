@@ -19,6 +19,7 @@ import javax.persistence.JoinColumn;
  * We have a Many to many join table with Symptoms so that many diseases can have many symptoms
  * @author Darius
  */
+
 @Entity
 @Table(name="DISEASES")
 public class Disease {
