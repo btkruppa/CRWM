@@ -12,19 +12,13 @@ import javax.persistence.Table;
 import javax.persistence.ForeignKey;
 import javax.persistence.ConstraintMode;
 
-<<<<<<< HEAD
+
 /**
  * Summary *
  * Uses a one to many for fetching the information from player
  * Takes information in the object for the Leaderboard from sql
  * @author Darius
  */
-=======
-///Summary///
-///Uses a one to many for fetching the information from player
-///Takes information in the object for the Leaderboard from sql
-
->>>>>>> dev
 @Entity
 @Table(name="LEADERBOARD")
 public class LeaderBoard {

@@ -5,18 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-<<<<<<< HEAD
-
 /**
  * Summary *
  * Patient object takes in patient table information from the sql
  * @author Darius
  */
-=======
-///Summary///
-///Patient object takes in patient table information from the sql
-
->>>>>>> dev
 @Entity
 @Table(name="PATIENTS")
 public class Patients {
