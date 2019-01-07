@@ -7,6 +7,7 @@ import javax.persistence.Table;
 
 /**
  * Summary *
+
  * Patient object takes in patient table information from the sql
  * @author Darius
  */
@@ -38,39 +39,42 @@ public class Patients {
 	private int age;
 	@Column(name="DISEASE_ID")
 	private int disease_ID;
-	public synchronized int getPatient_ID() {
+
+	public int getPatient_ID() {
 		return patient_ID;
 	}
-	public synchronized void setPatient_ID(int patient_ID) {
+	public void setPatient_ID(int patient_ID) {
 		this.patient_ID = patient_ID;
 	}
-	public synchronized String getFirst_Name() {
+	public String getFirst_Name() {
 		return first_Name;
 	}
-	public synchronized void setFirst_Name(String first_Name) {
+	public void setFirst_Name(String first_Name) {
 		this.first_Name = first_Name;
 	}
-	public synchronized String getLast_Name() {
+	public String getLast_Name() {
 		return last_Name;
 	}
-	public synchronized void setLast_Name(String last_Name) {
+	public void setLast_Name(String last_Name) {
 		this.last_Name = last_Name;
 	}
-	public synchronized int getAge() {
+	public int getAge() {
 		return age;
 	}
-	public synchronized void setAge(int age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
-	public synchronized int getDisease_ID() {
+	public int getDisease_ID() {
 		return disease_ID;
 	}
-	public synchronized void setDisease_ID(int disease_ID) {
+	public void setDisease_ID(int disease_ID) {
 		this.disease_ID = disease_ID;
 	}
 	@Override
 	public String toString() {
-		return "Patients [Patient_ID=" + patient_ID + ", First_Name=" + first_Name + ", Last_Name=" + last_Name
-				+ ", Age=" + age + ", Disease_ID=" + disease_ID + "]";
+
+		return "Patients [patient_ID=" + patient_ID + ", first_Name=" + first_Name + ", last_Name=" + last_Name
+				+ ", age=" + age + ", disease_ID=" + disease_ID + "]";
 	}
+	
 }

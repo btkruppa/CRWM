@@ -32,75 +32,44 @@ public class Disease {
 	    )
 	    Set<Symptom> symptom = new HashSet<>();
 
-	public Disease(int disease_ID, String disease_NAME, String disease_DESCRIPTION) {
+	public Disease(int disease_id, String disease_name, String disease_description) {
 		super();
-		Disease_ID = disease_ID;
-		Disease_NAME = disease_NAME;
-		Disease_DESCRIPTION = disease_DESCRIPTION;
+		this.disease_id = disease_id;
+		this.disease_name = disease_name;
+		this.disease_description = disease_description;
 	}
 	public Disease() {
 		// TODO Auto-generated constructor stub
 	}
 	@Id
 	@Column(name="DISEASE_ID")
-	private int Disease_ID;
+	private int disease_id;
 	@Column(name="DISEASE_NAME")
-	private String Disease_NAME;
+	private String disease_name;
 	@Column(name="DISEASE_DESCRIPTION")
-	private String Disease_DESCRIPTION;
-	public  int getDisease_ID() {
-		return Disease_ID;
+	private String disease_description;
+	public  int getDisease_Id() {
+		return disease_id;
 	}
-	public  void setDisease_ID(int disease_ID) {
-		Disease_ID = disease_ID;
+	public  void setDisease_Id(int disease_id) {
+		this.disease_id = disease_id;
 	}
-	public  String getDisease_NAME() {
-		return Disease_NAME;
+	public  String getDisease_Name() {
+		return disease_name;
 	}
-	public  void setDisease_NAME(String disease_NAME) {
-		Disease_NAME = disease_NAME;
+	public  void setDisease_NAME(String disease_name) {
+		this.disease_name = disease_name;
 	}
-	public  String getDisease_DESCRIPTION() {
-		return Disease_DESCRIPTION;
+	public  String getDisease_Description() {
+		return disease_description;
 	}
-	public  void setDisease_DESCRIPTION(String disease_DESCRIPTION) {
-		Disease_DESCRIPTION = disease_DESCRIPTION;
-	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((Disease_DESCRIPTION == null) ? 0 : Disease_DESCRIPTION.hashCode());
-		result = prime * result + Disease_ID;
-		result = prime * result + ((Disease_NAME == null) ? 0 : Disease_NAME.hashCode());
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Disease other = (Disease) obj;
-		if (Disease_DESCRIPTION == null) {
-			if (other.Disease_DESCRIPTION != null)
-				return false;
-		} else if (!Disease_DESCRIPTION.equals(other.Disease_DESCRIPTION))
-			return false;
-		if (Disease_ID != other.Disease_ID)
-			return false;
-		if (Disease_NAME == null) {
-			if (other.Disease_NAME != null)
-				return false;
-		} else if (!Disease_NAME.equals(other.Disease_NAME))
-			return false;
-		return true;
+	public  void setDisease_DESCRIPTION(String disease_description) {
+		this.disease_description = disease_description;
 	}
 	@Override
 	public String toString() {
-		return "Disease [Disease_ID=" + Disease_ID + ", Disease_NAME=" + Disease_NAME + ", Disease_DESCRIPTION="
-				+ Disease_DESCRIPTION + "]";
+		return "Disease [symptom=" + symptom + ", disease_id=" + disease_id + ", disease_name=" + disease_name
+				+ ", disease_description=" + disease_description + "]";
 	}
+
 }
