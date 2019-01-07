@@ -52,51 +52,51 @@ public class Symptom {
 	@Column(name = "SYMPTOM_TEST")
 	private String symptom_Test;
 
-	public synchronized int getSymptom_ID() {
+	public int getSymptom_ID() {
 		return symptom_ID;
 	}
 
-	public synchronized void setSymptom_ID(int symptom_ID) {
+	public void setSymptom_ID(int symptom_ID) {
 		this.symptom_ID = symptom_ID;
 	}
 
-	public synchronized String getSymptom_Name() {
+	public String getSymptom_Name() {
 		return symptom_Name;
 	}
 
-	public synchronized void setSymptom_Name(String symptom_Name) {
+	public void setSymptom_Name(String symptom_Name) {
 		this.symptom_Name = symptom_Name;
 	}
 
-	public synchronized String getSymptom_Description() {
+	public String getSymptom_Description() {
 		return symptom_Description;
 	}
 
-	public synchronized void setSymptom_Description(String symptom_Description) {
+	public void setSymptom_Description(String symptom_Description) {
 		this.symptom_Description = symptom_Description;
 	}
 
-	public synchronized String getIs_Observable() {
+	public String getIs_Observable() {
 		return is_Observable;
 	}
 
-	public synchronized void setIs_Observable(String is_Observable) {
+	public void setIs_Observable(String is_Observable) {
 		this.is_Observable = is_Observable;
 	}
 
-	public synchronized String getIs_Testable() {
+	public String getIs_Testable() {
 		return is_Testable;
 	}
 
-	public synchronized void setIs_Testable(String is_Testable) {
+	public void setIs_Testable(String is_Testable) {
 		this.is_Testable = is_Testable;
 	}
 
-	public synchronized String getSymptom_Test() {
+	public String getSymptom_Test() {
 		return symptom_Test;
 	}
 
-	public synchronized void setSymptom_Test(String symptom_Test) {
+	public void setSymptom_Test(String symptom_Test) {
 		this.symptom_Test = symptom_Test;
 	}
 
