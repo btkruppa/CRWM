@@ -1,12 +1,25 @@
 package com.rev.beans;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ConstraintMode;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.ForeignKey;
+
+/**
+ * Summary *
+ * Player information from login goes into here
+ * @author Darius
+ */
+
 
 ///Summary///
 ///Player information from login goes into here
@@ -22,7 +35,7 @@ public class Player {
 	}
 	public Player(int id, String username, String password, String firstname, String lastname, int score, String isdev) {
 		super();
-		this.id = id;
+		this.Player_ID = id;
 		Username = username;
 		Password = password;
 		Score = score;
@@ -31,10 +44,10 @@ public class Player {
 		this.isdev = isdev;
 	}
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO, generator="playerSequence")
-	@SequenceGenerator(allocationSize= 1,name="playerSequence",sequenceName="SQ_PLAYER_PK")
+	/*@GeneratedValue(strategy=GenerationType.AUTO, generator="playerSequence")
+	@SequenceGenerator(allocationSize= 1,name="playerSequence",sequenceName="SQ_PLAYER_PK")*/
 	@Column(name="PLAYER_ID")
-	private int id;
+	private int Player_ID;
 	@Column(name="USERNAME")
 	private String Username;
 	@Column(name="PLAYER_PASSWORD")
@@ -47,11 +60,15 @@ public class Player {
 	private String Lastname;
 	@Column(name="IS_DEV")
 	private String isdev;
+	@ManyToOne
+	@JoinColumn(name="LeaderBoard_ID")
+	private LeaderBoard leader;
+	
 	public int getId() {
-		return id;
+		return Player_ID;
 	}
 	public void setId(int id) {
-		this.id = id;
+		this.Player_ID = id;
 	}
 	public String getUsername() {
 		return Username;
@@ -98,7 +115,7 @@ public class Player {
 		result = prime * result + ((Lastname == null) ? 0 : Lastname.hashCode());
 		result = prime * result + ((Password == null) ? 0 : Password.hashCode());
 		result = prime * result + Score;
-		result = prime * result + id;
+		result = prime * result + Player_ID;
 		result = prime * result + ((isdev == null) ? 0 : isdev.hashCode());
 		return result;
 	}
@@ -133,7 +150,7 @@ public class Player {
 			return false;
 		if (Score != other.Score)
 			return false;
-		if (id != other.id)
+		if (Player_ID != other.Player_ID)
 			return false;
 		if (isdev == null) {
 			if (other.isdev != null)
@@ -144,7 +161,7 @@ public class Player {
 	}
 	@Override
 	public String toString() {
-		return "Player [id=" + id + ", Username=" + Username + ", Password=" + Password + ", Score=" + Score + ", Firstname="
+		return "Player [id=" + Player_ID + ", Username=" + Username + ", Password=" + Password + ", Score=" + Score + ", Firstname="
 				+ Firstname + ", Lastname=" + Lastname + ", isdev=" + isdev + "]";
 	}
 }
