@@ -33,7 +33,7 @@ public class Player {
 	{
 		
 	}
-	public Player(int id, String username, String password, String firstname, String lastname, int score, String isdev) {
+	public Player(int id, String username, String password, String firstname, String lastname, int score, String isdev,LeaderBoard leader) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -42,6 +42,7 @@ public class Player {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.isdev = isdev;
+		this.leader = leader;
 	}
 	@Id
 	/*@GeneratedValue(strategy=GenerationType.AUTO, generator="playerSequence")
@@ -111,5 +112,11 @@ public class Player {
 		return "Player [id=" + id + ", username=" + username + ", password=" + password + ", score=" + score
 				+ ", firstname=" + firstname + ", lastname=" + lastname + ", isdev=" + isdev + ", leader=" + leader
 				+ "]";
+	}
+	public LeaderBoard getLeader() {
+		return leader;
+	}
+	public void setLeader(LeaderBoard leader) {
+		this.leader = leader;
 	}
 }
