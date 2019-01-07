@@ -20,35 +20,16 @@ import javax.persistence.ForeignKey;
  * @author Darius
  */
 
-
-package com.rev.beans;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.ConstraintMode;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.ForeignKey;
-
-/**
- * Summary *
- * Player information from login goes into here
- * @author Darius
- */
-
 @Entity
 @Table(name="PLAYER")
 public class Player {
+	public Player()
+	{
+		
+	}
 
-	public Player(int player_ID, String username, String password, int score, String firstname, String lastname,
-			String isdev, LeaderBoard leader) {
+public Player(int player_ID, String username, String password, int score, String firstname, String lastname,
+		String isdev, LeaderBoard leader) {
 		super();
 		Player_ID = player_ID;
 		Username = username;
@@ -58,10 +39,6 @@ public class Player {
 		Lastname = lastname;
 		this.isdev = isdev;
 		this.leader = leader;
-	}
-	public Player()
-	{
-		
 	}
 	@Id
 	/*@GeneratedValue(strategy=GenerationType.AUTO, generator="playerSequence")
