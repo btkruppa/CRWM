@@ -1,8 +1,12 @@
 package com.rev.beans;
 
-///Summary///
-///This object will take in the user input
-///Taking in the username
+/**
+ * Summary *
+ * This object will take in the user input
+ * Taking in the username an password that the user enters
+ * Later we will authenticate the users input against the information in the database
+ * @author Darius
+ */
 public class Credentials {
 
 public Credentials( String username, String password) {

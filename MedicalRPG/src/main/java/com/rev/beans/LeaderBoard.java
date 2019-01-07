@@ -12,14 +12,20 @@ import javax.persistence.Table;
 import javax.persistence.ForeignKey;
 import javax.persistence.ConstraintMode;
 
+/**
+ * Summary *
+ * Uses a one to many for fetching the information from player
+ * Takes information in the object for the Leaderboard from sql
+ * @author Darius
+ */
 @Entity
 @Table(name="LEADERBOARD")
 public class LeaderBoard {
 
-	public LeaderBoard(int leaderBoard_ID, Set<String> user_ID, int score) {
+	public LeaderBoard(int leaderBoard_ID, Set<Player> user_ID, int score) {
 		super();
 		LeaderBoard_ID = leaderBoard_ID;
-		Username_ID = user_ID;
+		Players = user_ID;
 		SCORE = score;
 	}
 	public LeaderBoard() {
@@ -27,9 +33,8 @@ public class LeaderBoard {
 	@Id
 	@Column(name="LEADERBOARD_ID")
 	private int LeaderBoard_ID;
-	@OneToMany(fetch=FetchType.EAGER)
-	@JoinColumn(name="USERNAME",foreignKey=@ForeignKey(ConstraintMode.NO_CONSTRAINT))
-	private Set<String> Username_ID;
+	@OneToMany(mappedBy="leader")
+	private Set<Player> Players;
 	@Column(name="SCORE")
 	private int SCORE;
 	public  int getLeaderBoard_ID() {
@@ -50,7 +55,7 @@ public class LeaderBoard {
 		int result = 1;
 		result = prime * result + LeaderBoard_ID;
 		result = prime * result + SCORE;
-		result = prime * result + ((Username_ID == null) ? 0 : Username_ID.hashCode());
+		result = prime * result + ((Players == null) ? 0 : Players.hashCode());
 		return result;
 	}
 	@Override
@@ -66,21 +71,21 @@ public class LeaderBoard {
 			return false;
 		if (SCORE != other.SCORE)
 			return false;
-		if (Username_ID == null) {
-			if (other.Username_ID != null)
+		if (Players == null) {
+			if (other.Players != null)
 				return false;
-		} else if (!Username_ID.equals(other.Username_ID))
+		} else if (!Players.equals(other.Players))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "LeaderBoard [LeaderBoard_ID=" + LeaderBoard_ID + ", User_ID=" + Username_ID + ", SCORE=" + SCORE + "]";
+		return "LeaderBoard [LeaderBoard_ID=" + LeaderBoard_ID + ", User_ID=" + Players + ", SCORE=" + SCORE + "]";
 	}
-	public Set<String> getUser_ID() {
-		return Username_ID;
+	public Set<Player> getUser_ID() {
+		return Players;
 	}
-	public void setUser_ID(Set<String> user_ID) {
-		Username_ID = user_ID;
+	public void setUser_ID(Set<Player> user_ID) {
+		Players = user_ID;
 	}
 }

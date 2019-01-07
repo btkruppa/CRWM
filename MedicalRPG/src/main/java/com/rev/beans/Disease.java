@@ -12,13 +12,20 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.JoinColumn;
 
+
+/**
+ * Summary*
+ * Disease will take in information from the disease table
+ * We have a Many to many join table with Symptoms so that many diseases can have many symptoms
+ * @author Darius
+ */
 @Entity
-@Table(name="DISEASE")
+@Table(name="DISEASES")
 public class Disease {
 	    
 	@ManyToMany(cascade = { CascadeType.ALL })
 	    @JoinTable(
-	        name = "DISEASE_SYMPTOM", 
+	        name = "DISEASE_SYMPTOMS", 
 	        joinColumns = { @JoinColumn(name = "DISEASE_ID") }, 
 	        inverseJoinColumns = { @JoinColumn(name = "SYMPTOM_ID") }
 	    )

@@ -5,8 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
+/**
+ * Summary *
+ * Patient object takes in patient table information from the sql
+ * @author Darius
+ */
 @Entity
-@Table(name="PATIENT")
+@Table(name="PATIENTS")
 public class Patients {
 
 	public Patients(int patient_ID, String first_Name, String last_Name, int age, int disease_ID) {
@@ -18,7 +24,7 @@ public class Patients {
 		Disease_ID = disease_ID;
 	}
 	public Patients() {
-		// TODO Auto-generated constructor stub
+	
 	}
 	@Id
 	/*@GeneratedValue(strategy=GenerationType.AUTO, generator="patientSequence")

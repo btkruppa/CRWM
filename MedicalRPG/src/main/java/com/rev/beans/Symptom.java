@@ -9,12 +9,20 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+/**
+ * Summary *
+ * Takes in symptom from sql symptoms table
+ * Use a join table to connect the many to many operation to Disease
+ * @author Darius
+ */
+
+
 @Entity
 @Table(name="SYMPTOMS")
 public class Symptom {
 	    
-	@ManyToMany(mappedBy = "DISEASE")
-	   	private Set<Disease> employees = new HashSet<>();
+	@ManyToMany(mappedBy = "symptom")
+	   	private Set<Disease> diseases = new HashSet<>();
 	     
 	public Symptom(int symptom_ID, String symptom_Name, String symptom_Description, String is_Observable,
 			String is_Testable, String symptom_Test) {
