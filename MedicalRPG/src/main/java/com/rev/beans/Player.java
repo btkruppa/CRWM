@@ -35,29 +35,29 @@ public class Player {
 	}
 	public Player(int id, String username, String password, String firstname, String lastname, int score, String isdev) {
 		super();
-		this.Player_ID = id;
-		Username = username;
-		Password = password;
-		Score = score;
-		Firstname = firstname;
-		Lastname = lastname;
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.score = score;
+		this.firstname = firstname;
+		this.lastname = lastname;
 		this.isdev = isdev;
 	}
 	@Id
 	/*@GeneratedValue(strategy=GenerationType.AUTO, generator="playerSequence")
 	@SequenceGenerator(allocationSize= 1,name="playerSequence",sequenceName="SQ_PLAYER_PK")*/
 	@Column(name="PLAYER_ID")
-	private int Player_ID;
+	private int id;
 	@Column(name="USERNAME")
-	private String Username;
+	private String username;
 	@Column(name="PLAYER_PASSWORD")
-	private String Password;
+	private String password;
 	@Column(name="HIGH_SCORES")
-	private int Score;
+	private int score;
 	@Column(name="FIRST_NAME")
-	private String Firstname;
+	private String firstname;
 	@Column(name="LAST_NAME")
-	private String Lastname;
+	private String lastname;
 	@Column(name="IS_DEV")
 	private String isdev;
 	@ManyToOne
@@ -65,40 +65,40 @@ public class Player {
 	private LeaderBoard leader;
 	
 	public int getId() {
-		return Player_ID;
+		return id;
 	}
 	public void setId(int id) {
-		this.Player_ID = id;
+		this.id = id;
 	}
 	public String getUsername() {
-		return Username;
+		return username;
 	}
 	public void setUsername(String username) {
-		Username = username;
+		this.username = username;
 	}
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 	public int getScore() {
-		return Score;
+		return score;
 	}
 	public void setScore(int score) {
-		Score = score;
+		this.score = score;
 	}
 	public String getFirstname() {
-		return Firstname;
+		return firstname;
 	}
 	public void setFirstname(String firstname) {
-		Firstname = firstname;
+		this.firstname = firstname;
 	}
 	public String getLastname() {
-		return Lastname;
+		return lastname;
 	}
 	public void setLastname(String lastname) {
-		Lastname = lastname;
+		this.lastname = lastname;
 	}
 	public String getIsdev() {
 		return isdev;
@@ -107,61 +107,9 @@ public class Player {
 		this.isdev = isdev;
 	}
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((Username == null) ? 0 : Username.hashCode());
-		result = prime * result + ((Firstname == null) ? 0 : Firstname.hashCode());
-		result = prime * result + ((Lastname == null) ? 0 : Lastname.hashCode());
-		result = prime * result + ((Password == null) ? 0 : Password.hashCode());
-		result = prime * result + Score;
-		result = prime * result + Player_ID;
-		result = prime * result + ((isdev == null) ? 0 : isdev.hashCode());
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Player other = (Player) obj;
-		if (Username == null) {
-			if (other.Username != null)
-				return false;
-		} else if (!Username.equals(other.Username))
-			return false;
-		if (Firstname == null) {
-			if (other.Firstname != null)
-				return false;
-		} else if (!Firstname.equals(other.Firstname))
-			return false;
-		if (Lastname == null) {
-			if (other.Lastname != null)
-				return false;
-		} else if (!Lastname.equals(other.Lastname))
-			return false;
-		if (Password == null) {
-			if (other.Password != null)
-				return false;
-		} else if (!Password.equals(other.Password))
-			return false;
-		if (Score != other.Score)
-			return false;
-		if (Player_ID != other.Player_ID)
-			return false;
-		if (isdev == null) {
-			if (other.isdev != null)
-				return false;
-		} else if (!isdev.equals(other.isdev))
-			return false;
-		return true;
-	}
-	@Override
 	public String toString() {
-		return "Player [id=" + Player_ID + ", Username=" + Username + ", Password=" + Password + ", Score=" + Score + ", Firstname="
-				+ Firstname + ", Lastname=" + Lastname + ", isdev=" + isdev + "]";
+		return "Player [id=" + id + ", username=" + username + ", password=" + password + ", score=" + score
+				+ ", firstname=" + firstname + ", lastname=" + lastname + ", isdev=" + isdev + ", leader=" + leader
+				+ "]";
 	}
 }
