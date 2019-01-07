@@ -33,7 +33,11 @@ public class Player {
 	{
 		
 	}
+<<<<<<< HEAD
 	public Player(int id, String username, String password, String firstname, String lastname, int score, String isdev, LeaderBoard leader) {
+=======
+	public Player(int id, String username, String password, String firstname, String lastname, int score, String isdev,LeaderBoard leader) {
+>>>>>>> 8387bda14dcc39dbf31634ae4616a78ba413994d
 		super();
 		this.id = id;
 		this.username = username;
@@ -119,5 +123,11 @@ public class Player {
 		return "Player [id=" + id + ", username=" + username + ", password=" + password + ", score=" + score
 				+ ", firstname=" + firstname + ", lastname=" + lastname + ", isdev=" + isdev + ", leader=" + leader
 				+ "]";
+	}
+	public LeaderBoard getLeader() {
+		return leader;
+	}
+	public void setLeader(LeaderBoard leader) {
+		this.leader = leader;
 	}
 }

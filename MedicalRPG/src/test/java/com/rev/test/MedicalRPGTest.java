@@ -59,7 +59,7 @@ public class MedicalRPGTest {
      */
     @Test
     public void testGetAllPlayerByRealId() {
-        Player testPlayer = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false");
+        Player testPlayer = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false",null);
         assertTrue(testPlayer.equals(playerDao.getPlayerByID(10250)));
     }
     /**
@@ -69,7 +69,7 @@ public class MedicalRPGTest {
      */
     @Test
     public void testGetAllPlayerByUnknownId() {
-        Player testPlayer = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false");
+        Player testPlayer = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false",null);
         assertFalse(testPlayer.equals(playerDao.getPlayerByID(10)));
     }
     /**
@@ -82,7 +82,7 @@ public class MedicalRPGTest {
     public void testIsValidUserReal() {
         AuthenticationService auth = new AuthenticationService();
         Credentials cred = new Credentials("hdurrell0@indigo.com","yTXA0LXDON");
-        Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false");
+        Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false",null);
         assertEquals(p,auth.isValidUser(cred));
     }
     /**
@@ -92,7 +92,7 @@ public class MedicalRPGTest {
     @Test
     public void testIsValidUserIncorrectEmail() {
         Credentials cred = new Credentials("h@indigo.com","yTXA0LXDON");
-        Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false");
+        Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false",null);
         assertFalse(p.equals(auth.isValidUser(cred)));
     }
     /**
@@ -102,7 +102,7 @@ public class MedicalRPGTest {
     @Test
     public void testIsValidUserIncorrectPassword() {
         Credentials cred = new Credentials("hdurrell0@indigo.com","y");
-        Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false");
+        Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false",null);
         assertFalse(p.equals(auth.isValidUser(cred)));
     }
     /**
@@ -112,7 +112,7 @@ public class MedicalRPGTest {
     @Test
     public void testIsValidUserNullCredentials() {
         Credentials cred = new Credentials(null,null);
-        Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false");
+        Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false",null);
         assertFalse(p.equals(auth.isValidUser(cred)));
     }
     /**
