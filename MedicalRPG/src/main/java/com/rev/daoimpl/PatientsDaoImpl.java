@@ -25,7 +25,7 @@ public class PatientsDaoImpl implements PatientsDao {
 			tx.commit();
 			s.close();
 		}
-		return null;
+		return p;
 	}
 
 	@Override
