@@ -76,5 +76,44 @@ public class Patients {
 		return "Patients [patient_ID=" + patient_ID + ", first_Name=" + first_Name + ", last_Name=" + last_Name
 				+ ", age=" + age + ", disease_ID=" + disease_ID + "]";
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + age;
+		result = prime * result + disease_ID;
+		result = prime * result + ((first_Name == null) ? 0 : first_Name.hashCode());
+		result = prime * result + ((last_Name == null) ? 0 : last_Name.hashCode());
+		result = prime * result + patient_ID;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Patients other = (Patients) obj;
+		if (age != other.age)
+			return false;
+		if (disease_ID != other.disease_ID)
+			return false;
+		if (first_Name == null) {
+			if (other.first_Name != null)
+				return false;
+		} else if (!first_Name.equals(other.first_Name))
+			return false;
+		if (last_Name == null) {
+			if (other.last_Name != null)
+				return false;
+		} else if (!last_Name.equals(other.last_Name))
+			return false;
+		if (patient_ID != other.patient_ID)
+			return false;
+		return true;
+	}
+	
 	
 }

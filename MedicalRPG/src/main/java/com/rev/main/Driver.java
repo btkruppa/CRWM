@@ -1,12 +1,21 @@
 package com.rev.main;
 
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import com.rev.beans.Player;
+import com.rev.dao.DiseaseDao;
+import com.rev.dao.LeaderBoardDao;
+import com.rev.dao.PatientsDao;
 import com.rev.dao.PlayerDao;
+import com.rev.dao.SymptomDao;
+import com.rev.daoimpl.DiseaseDaoImpl;
+import com.rev.daoimpl.LeaderBoardDaoImpl;
+import com.rev.daoimpl.PatientsDaoImpl;
 import com.rev.daoimpl.PlayerDaoImpl;
+import com.rev.daoimpl.SymptomDaoImpl;
 import com.rev.util.HibernateUtil;
 
 public class Driver {
@@ -16,8 +25,14 @@ public class Driver {
 	public static void main(String[] args) {
 //		Single.instance().Dummy();
 		PlayerDao pd = new PlayerDaoImpl();
-//		System.out.println(use.getallPlayers());
-		System.out.println(pd.getPlayerByID(10200));
+		DiseaseDao dd = new DiseaseDaoImpl();
+		LeaderBoardDao lbd = new LeaderBoardDaoImpl();
+		PatientsDao ptsd = new PatientsDaoImpl();
+		SymptomDao sd = new SymptomDaoImpl();
+		System.out.println(pd.getallPlayers());
+//		System.out.println(pd.getPlayerByID(10200));
+//		Hibernate.initialize(dd.getAllDiseases().get(1));
+//		System.out.println(lbd.getAllLeaderBoards());
 //		funWithSessions(sf);
 	}
 

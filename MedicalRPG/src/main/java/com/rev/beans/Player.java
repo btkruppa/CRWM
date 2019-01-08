@@ -5,14 +5,11 @@ import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.ForeignKey;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.ForeignKey;
+import javax.persistence.Table;
 
 /**
  * Summary *
@@ -57,8 +54,8 @@ public Player(int player_ID, String username, String password, int score, String
 	private String lastname;
 	@Column(name="IS_DEV")
 	private String isdev;
-	@ManyToOne
-	@JoinColumn(name="LeaderBoard_ID")
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.ALL, CascadeType.REMOVE })
+	@JoinColumn(name="LEADERBOARD_ID", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
 	private LeaderBoard leader;
 	
 	public int getId() {
@@ -109,4 +106,66 @@ public Player(int player_ID, String username, String password, int score, String
 				+ score + ", Firstname=" + firstname + ", Lastname=" + lastname + ", isdev=" + isdev + ", leader="
 				+ leader + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
+		result = prime * result + ((isdev == null) ? 0 : isdev.hashCode());
+		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
+		result = prime * result + ((leader == null) ? 0 : leader.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + player_ID;
+		result = prime * result + score;
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Player other = (Player) obj;
+		if (firstname == null) {
+			if (other.firstname != null)
+				return false;
+		} else if (!firstname.equals(other.firstname))
+			return false;
+		if (isdev == null) {
+			if (other.isdev != null)
+				return false;
+		} else if (!isdev.equals(other.isdev))
+			return false;
+		if (lastname == null) {
+			if (other.lastname != null)
+				return false;
+		} else if (!lastname.equals(other.lastname))
+			return false;
+		if (leader == null) {
+			if (other.leader != null)
+				return false;
+		} else if (!leader.equals(other.leader))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (player_ID != other.player_ID)
+			return false;
+		if (score != other.score)
+			return false;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
+			return false;
+		return true;
+	}
+	
 }
