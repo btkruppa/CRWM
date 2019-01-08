@@ -1,3 +1,6 @@
+-- @Author: Rebecca
+
+-- This section creates the Player and Leaderboard tables.
 CREATE TABLE PLAYER (
 PLAYER_ID INT PRIMARY KEY,
 EMAIL VARCHAR(50) UNIQUE,
@@ -14,6 +17,8 @@ USER_ID VARCHAR(20),
 SCORE NUMBER
 );
 /
+
+-- This section adds constraints to the Foreign Keys, creates sequences, and triggers.
 ALTER TABLE LEADERBOARD
 ADD CONSTRAINT FK_USER_ID
 FOREIGN KEY (USER_ID) REFERENCES PLAYER(PLAYER_ID);
@@ -29,6 +34,8 @@ BEGIN
     SELECT SQ_PLAYER_ID_PK.NEXTVAL INTO :NEW.PLAYER_ID FROM DUAL;
 END;
 /
+
+-- This section inserts information to the Player table according to the values that are listed in the columns.
 insert into PLAYER (EMAIL, PLAYER_PASSWORD, FIRST_NAME, LAST_NAME, HIGH_SCORES, IS_DEV) values ('kboden0@google.com', 'qn36JJ6E9ov', 'Karoly', 'Boden', '114383566', 'false');
 /
 insert into PLAYER (EMAIL, PLAYER_PASSWORD, FIRST_NAME, LAST_NAME, HIGH_SCORES, IS_DEV) values ('jcromett1@statco.com', 'aIValPqO', 'Jone', 'Cromett', '746368599', 'false');
@@ -67,10 +74,14 @@ insert into PLAYER (EMAIL, PLAYER_PASSWORD, FIRST_NAME, LAST_NAME, HIGH_SCORES, 
 / 
 insert into PLAYER (EMAIL, PLAYER_PASSWORD, FIRST_NAME, LAST_NAME, HIGH_SCORES, IS_DEV) values ('rruiz@crwm.com', 'qwerty', 'Rebecca', 'Ruiz', 947930753, 'true');
 /
+
+-- Created a sequence for the Leaderboard ID Primary Key
 CREATE SEQUENCE SQ_LEADERBOARD_ID_PK
 START WITH 1
 INCREMENT BY 1;
 /
+
+-- Created a trigger to insert an ID automatically into the Leaderboard ID column
 CREATE OR REPLACE TRIGGER TR_INSERT_LEADERBOARD_ID
 BEFORE INSERT ON LEADERBOARD 
 FOR EACH ROW
@@ -78,6 +89,8 @@ BEGIN
     SELECT SQ_LEADERBOARD_ID_PK.NEXTVAL INTO :NEW.LEADERBOARD_ID FROM DUAL;
 END;
 /
+
+-- This section inserts information to the Leaderboard column according to the values that are listed in the columns
 INSERT INTO LEADERBOARD (USER_ID, SCORE) VALUES ('rruiz@crwm.com', 947930753);
 /
 INSERT INTO LEADERBOARD (USER_ID, SCORE) VALUES ('rwhetson4@dagon.com', 860140548);
@@ -88,6 +101,8 @@ INSERT INTO LEADERBOARD (USER_ID, SCORE) VALUES ('dwatts@crwm.com', 803795037);
 /
 INSERT INTO LEADERBOARD (USER_ID, SCORE) VALUES ('hdurrell0@indigo.com', 796121652);
 /
+
+-- This section inserts information into the Symptoms table according to the values listed in the columns
 INSERT INTO SYMPTOMS (SYMPTOM_ID, SYMPTOM_NAME, SYMPTOM_DESCRIPTION, IS_OBSERVABLE, IS_TESTABLE, SYMPTOM_TEST) 
 VALUES (10, 'Frequent Infections', 'Patient is frequently getting infected', 'no', 'yes', 'blood');
 /
@@ -97,6 +112,8 @@ VALUES (11, 'Unusual bleeding', 'Patient is experiencing unusual bleeding', 'yes
 INSERT INTO SYMPTOMS (SYMPTOM_ID, SYMPTOM_NAME, SYMPTOM_DESCRIPTION, IS_OBSERVABLE, IS_TESTABLE, SYMPTOM_TEST) 
 VALUES (12, 'Pale skin', 'Skin is unusually pale', 'yes', 'no', 'null');
 /
+
+-- This section inserts information into the Disease_Symptoms table according to the values listed in the colums
 INSERT INTO DISEASE_SYMPTOMS (DISEASE_ID, SYMPTOM_ID) VALUES (2, 4);
 /
 INSERT INTO DISEASE_SYMPTOMS (DISEASE_ID, SYMPTOM_ID) VALUES (2, 5);
@@ -111,6 +128,8 @@ INSERT INTO DISEASE_SYMPTOMS (DISEASE_ID, SYMPTOM_ID) VALUES (1, 3);
 /
 DELETE FROM DISEASE_SYMPTOMS WHERE SYMPTOM_ID = 4;
 /
+
+-- Adding more information to the Symptoms table
 INSERT INTO SYMPTOMS (SYMPTOM_ID, SYMPTOM_NAME, SYMPTOM_DESCRIPTION, IS_OBSERVABLE, IS_TESTABLE, SYMPTOM_TEST) 
 VALUES (4, 'Hoarseness', 'Voice sounds breathy, raspy, strained, or change in volume', 'yes', 'no', 'null');
 /
@@ -129,12 +148,16 @@ VALUES (8, 'Irritable Bowel Syndrome', 'Patient has an irritable colon', 'yes', 
 INSERT INTO SYMPTOMS (SYMPTOM_ID, SYMPTOM_NAME, SYMPTOM_DESCRIPTION, IS_OBSERVABLE, IS_TESTABLE, SYMPTOM_TEST) 
 VALUES (9, 'Muscle stiffness', 'Patient has stiff muscles', 'yes', 'no', 'null');
 /
+
+-- This section inserts information into the Diseases table according to the values listed in the columns
 INSERT INTO DISEASES (DISEASE_ID, DISEASE_NAME, DISEASE_DESCRIPTION) 
 VALUES (4, 'Leukemia', 'Cancer of the blood-forming tissue in the body');
 /
 INSERT INTO DISEASES (DISEASE_ID, DISEASE_NAME, DISEASE_DESCRIPTION) 
 VALUES (5, 'Malaria', 'Mosquito-borne disease caused by a parasite');
 /
+
+-- Adding more information into the Disease_Symptoms table
 INSERT INTO DISEASE_SYMPTOMS (DISEASE_ID, SYMPTOM_ID) VALUES (2, 4);
 /
 INSERT INTO DISEASE_SYMPTOMS (DISEASE_ID, SYMPTOM_ID) VALUES (2, 5);
@@ -151,6 +174,8 @@ INSERT INTO DISEASE_SYMPTOMS (DISEASE_ID, SYMPTOM_ID) VALUES (4, 11);
 /
 INSERT INTO DISEASE_SYMPTOMS (DISEASE_ID, SYMPTOM_ID) VALUES (4, 12);
 /
+
+-- Adding more information into the Symptoms table
 INSERT INTO SYMPTOMS (SYMPTOM_ID, SYMPTOM_NAME, SYMPTOM_DESCRIPTION, IS_OBSERVABLE, IS_TESTABLE, SYMPTOM_TEST) 
 VALUES (13, 'Vomiting', 'Patient has vomiting episodes', 'yes', 'no', 'null');
 /
@@ -160,9 +185,14 @@ VALUES (14, 'Diarrhoea', 'Patient has loose or watery bowel movements', 'yes', '
 INSERT INTO SYMPTOMS (SYMPTOM_ID, SYMPTOM_NAME, SYMPTOM_DESCRIPTION, IS_OBSERVABLE, IS_TESTABLE, SYMPTOM_TEST) 
 VALUES (15, 'Muscle pains', 'Patient suffers of pain in the muscles', 'yes', 'no', 'null');
 /
+
+-- Adding more information into the Disease_Symptoms table
 INSERT INTO DISEASE_SYMPTOMS (DISEASE_ID, SYMPTOM_ID) VALUES (5, 13);
 /
 INSERT INTO DISEASE_SYMPTOMS (DISEASE_ID, SYMPTOM_ID) VALUES (5, 14);
 /
 INSERT INTO DISEASE_SYMPTOMS (DISEASE_ID, SYMPTOM_ID) VALUES (5, 15);
 /
+
+-- Had to drop the table Patient because it was created by mistake when connecting the database to hibernate code
+DROP TABLE PATIENT;
