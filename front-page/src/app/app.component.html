@@ -3,26 +3,11 @@
 The title will be found on every page as defined by the div class="center"
 The components contain ngIf statements to change the views shown 
 to the user based on what is clicked.-->
-<router-outlet></router-outlet>
 <div class="center">
-<img src="/assets/Caduceus.jpg" style="width:100px; height:100px">
-<h1 style="font-size:80px; color:red">DIAGNOSIS</h1>
-<img src="/assets/Caduceus.jpg" style="width:100px; height:100px">
+  <img src="/assets/Caduceus.jpg" style="width:100px; height:100px">
+  <h1 style="font-size:80px; color:red">DIAGNOSIS</h1>
+  <img src="/assets/Caduceus.jpg" style="width:100px; height:100px">
 </div>
-<div class="fullpage" *ngIf="!this.globals.isOn" style="background:black">
-  <div class="dialogue">
-  <app-dialogue></app-dialogue>
-  </div>
-  <div class="vitalsclipboard">
-    <div class="vitals">
-    <app-vitals></app-vitals>
-    </div>
-    <div class="clipboardsection">
-    <app-clipboard></app-clipboard>
-    </div>
-  </div>
+<div> <!--*ngIf="this.globals.isOn"-->
+  <router-outlet></router-outlet>
 </div>
-<div class="login" *ngIf="this.globals.isOn">
-  <app-login></app-login>
-</div>
-<button (click)="this.globals.isOn = true" *ngIf="!this.globals.isOn" style="margin-left:45vw; color:black;">View Login</button>

@@ -7,8 +7,8 @@ to the user -->
 <!-- http://warpdoor.com/content/images/2014/May/25931-shot2.jpg -->
 <div class="login-page">
     <div class="form">
-        <form action="Home.html" method="post" class="register-form">
-          <h2 style="color:white; margin-left:11%; font-size:50px; float:center">Register</h2>
+        <form action="/game" method="get" class="register-form">
+          <h2 style="color:white; font-size:50px; float:center">Register</h2>
             <span>
             <input type="text" placeholder="username" required/>
             <input type="email" placeholder="email" required />
@@ -21,16 +21,16 @@ to the user -->
             </span>
             <br />
             <br>
-            <button (click)="this.globals.isOn = false" style="width:68%">Get Started</button>
+            <button style="width:68%">Get Started</button>
             <p class="message" style="color:white">Already Registered: <a href="#">Login</a></p>
         </form>
-        <form action="Home.html" method="post" class="login-form">
-              <h2 style="color:white; margin-left:19%; font-size:50px">Login</h2>
+        <form action="/game" method="get" class="login-form">
+              <h2 style="color:white; font-size:50px">Login</h2>
             <input type="text" placeholder="username" required/>
             <input type="password" placeholder="password" required/>
             <br />
             <br>
-            <button (click)="this.globals.isOn = false" style="width:68%">Login</button>
+            <button style="width:68%">Login</button>
             <p class="message" style="color:white">Need a new account: <a href="#">Register</a></p>
         </form>
     </div>
