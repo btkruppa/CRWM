@@ -29,10 +29,16 @@ public class Driver {
 		LeaderBoardDao lbd = new LeaderBoardDaoImpl();
 		PatientsDao ptsd = new PatientsDaoImpl();
 		SymptomDao sd = new SymptomDaoImpl();
-		System.out.println(pd.getallPlayers());
+		
+		//Players
+//		System.out.println(pd.getallPlayers());
 //		System.out.println(pd.getPlayerByID(10200));
+		
+		//Diseases
 //		Hibernate.initialize(dd.getAllDiseases().get(1));
-//		System.out.println(lbd.getAllLeaderBoards());
+		
+		//LeaderBoards
+		System.out.println(lbd.getAllLeaderBoards());
 //		funWithSessions(sf);
 	}
 
