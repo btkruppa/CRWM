@@ -1,8 +1,9 @@
 /**@author Jake Mulrnein*/
 .hearts{
     display:flex;
-    margin-left:18%;
     flex-direction:row;
+    margin-left:15%;
+    float:center;
 }
 
 .heartRate{

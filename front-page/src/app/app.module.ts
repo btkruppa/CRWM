@@ -14,6 +14,7 @@ import { VitalsComponent } from './vitals/vitals.component';
 import { ClipboardComponent } from './clipboard/clipboard.component';
 import { LoginComponent } from './login/login.component';
 import { Globals } from './global';
+import { GamePageComponent } from './game-page/game-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { Globals } from './global';
     DialogueComponent,
     VitalsComponent,
     ClipboardComponent,
-    LoginComponent
+    LoginComponent,
+    GamePageComponent
   ],
   imports: [
     BrowserModule,
