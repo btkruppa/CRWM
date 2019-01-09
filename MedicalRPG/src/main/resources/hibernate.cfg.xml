@@ -23,5 +23,6 @@
 		<mapping class="com.rev.beans.LeaderBoard"></mapping>
 		<mapping class="com.rev.beans.Patients"></mapping>
 		<mapping class="com.rev.beans.Symptom"></mapping>
+		<!-- mapping class="com.rev.beans.DiseaseSymptom"></mapping> -->
 	</session-factory>
 </hibernate-configuration>

@@ -21,8 +21,8 @@ import javax.persistence.Table;
 @Table(name = "SYMPTOMS")
 public class Symptom {
 
-	@ManyToMany(mappedBy = "symptom", fetch = FetchType.LAZY)
-	private Set<Disease> diseases = new HashSet<>();
+//	@ManyToMany(mappedBy = "symptom", fetch = FetchType.LAZY)
+//	public Set<Disease> diseases = new HashSet<>();
 
 	public Symptom(int symptom_ID, String symptom_Name, String symptom_Description, String is_Observable,
 			String is_Testable, String symptom_Test) {
@@ -103,7 +103,7 @@ public class Symptom {
 
 	@Override
 	public String toString() {
-		return "Symptom [diseases=" + diseases + ", symptom_ID=" + symptom_ID + ", symptom_Name=" + symptom_Name
+		return "Symptom [symptom_ID=" + symptom_ID + ", symptom_Name=" + symptom_Name
 				+ ", symptom_Description=" + symptom_Description + ", is_Observable=" + is_Observable + ", is_Testable="
 				+ is_Testable + ", symptom_Test=" + symptom_Test + "]";
 	}
@@ -112,7 +112,6 @@ public class Symptom {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((diseases == null) ? 0 : diseases.hashCode());
 		result = prime * result + ((is_Observable == null) ? 0 : is_Observable.hashCode());
 		result = prime * result + ((is_Testable == null) ? 0 : is_Testable.hashCode());
 		result = prime * result + ((symptom_Description == null) ? 0 : symptom_Description.hashCode());
@@ -131,11 +130,6 @@ public class Symptom {
 		if (getClass() != obj.getClass())
 			return false;
 		Symptom other = (Symptom) obj;
-		if (diseases == null) {
-			if (other.diseases != null)
-				return false;
-		} else if (!diseases.equals(other.diseases))
-			return false;
 		if (is_Observable == null) {
 			if (other.is_Observable != null)
 				return false;

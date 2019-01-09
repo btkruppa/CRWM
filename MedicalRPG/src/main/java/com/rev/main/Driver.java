@@ -1,11 +1,15 @@
 package com.rev.main;
 
-import org.hibernate.Hibernate;
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
+import com.rev.beans.Disease;
 import com.rev.beans.Player;
+import com.rev.beans.Symptom;
 import com.rev.dao.DiseaseDao;
 import com.rev.dao.LeaderBoardDao;
 import com.rev.dao.PatientsDao;
@@ -21,7 +25,7 @@ import com.rev.util.HibernateUtil;
 public class Driver {
 
 	static SessionFactory sf = HibernateUtil.getSessionFactory();
-	
+
 	public static void main(String[] args) {
 //		Single.instance().Dummy();
 		PlayerDao pd = new PlayerDaoImpl();
@@ -30,16 +34,44 @@ public class Driver {
 		PatientsDao ptsd = new PatientsDaoImpl();
 		SymptomDao sd = new SymptomDaoImpl();
 		
-		//Players
+//		diseaseSymptoms(sf);
+
+		// Players
 //		System.out.println(pd.getallPlayers());
 //		System.out.println(pd.getPlayerByID(10200));
-		
-		//Diseases
+
+		// Diseases
 //		Hibernate.initialize(dd.getAllDiseases().get(1));
+//		System.out.println(dd.getAllDiseases());
+//		Disease d = dd.getDiseasebyID(1);
+//		System.out.println(d);
+//		for (Symptom s : d.getSymptom()) {
+//			System.out.println(s);
+//		}
 		
-		//LeaderBoards
-		System.out.println(lbd.getAllLeaderBoards());
+		// Patients
+		System.out.println(ptsd.getPatientsByID(1));
+		
+		//Symptoms
+//		System.out.println(sd.getAllSymptoms());
+
+		// LeaderBoards
+//		System.out.println(lbd.getAllLeaderBoards());
 //		funWithSessions(sf);
+	}
+
+	static void diseaseSymptoms(SessionFactory sf) {
+		Session s = sf.openSession();
+		Transaction tx = s.beginTransaction();
+
+		Query q1 = s.createNamedQuery("getDiseasesWithSymptoms", Disease.class);
+		q1.setParameter("DISEASE_ID", 1);
+		List<Disease> dl = q1.getResultList();
+		for (Disease d : dl) {
+			System.out.println(d);
+		}
+		tx.commit();
+		s.close();
 	}
 
 	static void funWithSessions(SessionFactory sf) {
