@@ -50,7 +50,8 @@ public class Driver {
 //		}
 		
 		// Patients
-		System.out.println(ptsd.getPatientsByID(1));
+//		System.out.println(ptsd.getPatientsByID(1));
+//		System.out.println(ptsd.getAllPatients());
 		
 		//Symptoms
 //		System.out.println(sd.getAllSymptoms());
