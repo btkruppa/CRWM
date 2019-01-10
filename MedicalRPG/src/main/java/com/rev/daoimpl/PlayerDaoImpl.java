@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Service;
 
 import com.rev.beans.Player;
 import com.rev.dao.PlayerDao;
@@ -16,7 +17,7 @@ import com.rev.util.HibernateUtil;
  * @author Max
  *
  */
-
+@Service(value="PlayerDao")
 public class PlayerDaoImpl implements PlayerDao {
 
 	// Session factory to obtain session
