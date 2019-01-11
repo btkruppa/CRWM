@@ -16,24 +16,25 @@ import com.rev.util.HibernateUtil;
 public class Driver {
 
 	static SessionFactory sf = HibernateUtil.getSessionFactory();
-	
+
 	public static void main(String[] args) {
 //		Single.instance().Dummy();
 		PlayerDao pd = new PlayerDaoImpl();
 //		System.out.println(use.getallPlayers());
-		System.out.println(pd.getPlayerByID(10200));
+//		System.out.println(pd.getPlayerByID(10200));
 //		funWithSessions(sf);
-	LeaderBoardDao lbd = new LeaderBoardDaoImpl();
+		LeaderBoardDao lbd = new LeaderBoardDaoImpl();
 		System.out.println(lbd.getLeaderBoardbyID(1));
-		
+
 		PatientsDao pat = new PatientsDaoImpl();
 		System.out.println(pat.getPatientsByID(1));
-		
+
 		// Patients
 //		System.out.println(ptsd.getPatientsByID(1));
 //		System.out.println(ptsd.getAllPatients());
-		
+
 	}
+
 	static void funWithSessions(SessionFactory sf) {
 		Session s = sf.getCurrentSession();
 		Transaction tx = s.beginTransaction();
