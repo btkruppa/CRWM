@@ -16,7 +16,7 @@ import com.rev.util.HibernateUtil;
 public class Driver {
 
 	static SessionFactory sf = HibernateUtil.getSessionFactory();
-
+	
 	public static void main(String[] args) {
 //		Single.instance().Dummy();
 		
@@ -37,7 +37,6 @@ public class Driver {
 
 //		funWithSessions(sf);
 	}
-
 	static void funWithSessions(SessionFactory sf) {
 		Session s = sf.getCurrentSession();
 		Transaction tx = s.beginTransaction();

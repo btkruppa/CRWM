@@ -1,8 +1,13 @@
 package com.rev.beans;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -15,6 +20,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "SYMPTOMS")
 public class Symptom {
+
+//	@ManyToMany(mappedBy = "symptom", fetch = FetchType.LAZY)
+//	public Set<Disease> diseases = new HashSet<>();
 
 	public Symptom(int symptom_ID, String symptom_Name, String symptom_Description, String is_Observable,
 			String is_Testable, String symptom_Test) {
