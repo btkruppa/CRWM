@@ -16,9 +16,6 @@ export class DialogueComponent implements OnInit {
 
   startGame(){
     document.getElementById("dialoguetext").innerHTML = this.globals.introStart + this.globals.username + "." + this.globals.introEnd;
-  }
-
-  introducePatient(){
-    document.getElementById("dialoguetext").innerHTML += "/n> Great! I'd like to introduce you to your new patient, " + this.globals.patientFirstName + " " + this.globals.patientLastName;
+    this.placeholder=true;
   }
 }

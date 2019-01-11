@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Globals } from '../global';
 
 @Component({
   selector: 'app-clipboard',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClipboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private globals:Globals) { }
 
+  
   ngOnInit() {
   }
 
