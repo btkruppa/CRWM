@@ -8,9 +8,11 @@
 </head>
 <body>
 	<div class="display">
-		<p> UserName: ${username}</p>
+
+		<p> User Name: ${username}</p>
 		<p> Score: ${score}</p>
-		
+		<p> First Name: ${firstname}</p>
+		<p> Last Name: ${lastname}</p>		
 	</div>
 </body>
 </html>

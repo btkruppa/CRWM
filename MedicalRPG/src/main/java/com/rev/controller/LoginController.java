@@ -39,6 +39,8 @@ public class LoginController {
 		} else {
 			m.addAttribute("username", cred.getUsername());
 			m.addAttribute("score", cred.getScore());
+			
+			//m.addAttribute("pname", )
 			return "profile";
 		}
 		
