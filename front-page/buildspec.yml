@@ -17,7 +17,7 @@ phases:
             # if build succeeds copy the dist folder into the s3 bucket
             - |
                 if [ "$CODEBUILD_BUILD_SUCCEEDING" = "1" ]; then
-                    cd front-page && aws s3 cp "dist" "s3://${S3_BUCKET}" "--recursive";
+                    cd front-page && aws s3 cp "dist/front-page" "s3://${S3_BUCKET}" "--recursive";
                     echo "Build completed on date";
                 fi
 artifacts:
