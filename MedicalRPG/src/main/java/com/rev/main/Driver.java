@@ -19,20 +19,23 @@ public class Driver {
 
 	public static void main(String[] args) {
 //		Single.instance().Dummy();
+		
+		//Player
 		PlayerDao pd = new PlayerDaoImpl();
 //		System.out.println(use.getallPlayers());
 //		System.out.println(pd.getPlayerByID(10200));
-//		funWithSessions(sf);
+		
+		//Leaderboard
 		LeaderBoardDao lbd = new LeaderBoardDaoImpl();
-		System.out.println(lbd.getLeaderBoardbyID(1));
+//		System.out.println(lbd.getAllLeaderBoards());
+//		System.out.println(lbd.getLeaderBoardbyID(1));
 
+		//Patient
 		PatientsDao pat = new PatientsDaoImpl();
-		System.out.println(pat.getPatientsByID(1));
-
-		// Patients
 //		System.out.println(ptsd.getPatientsByID(1));
-//		System.out.println(ptsd.getAllPatients());
+//		System.out.println(pat.getAllPatients());
 
+//		funWithSessions(sf);
 	}
 
 	static void funWithSessions(SessionFactory sf) {

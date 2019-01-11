@@ -2,24 +2,22 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-	default-init-method="defaultInit" default-destroy-method="defaultDestroy">
-	
+	default-init-method="defaultInit"
+	default-destroy-method="defaultDestroy">
+
 	<bean name="disease" class="com.rev.beans.Disease">
-		<!-- inject values into bean -->
 
 	</bean>
-		<bean name="leaderboard" class="com.rev.beans.LeaderBoard">
-
-
-	</bean>
-		<bean name="patients" class="com.rev.beans.Patients">
-
+	<bean name="leaderboard" class="com.rev.beans.LeaderBoard">
 
 	</bean>
-	<bean name="author" class="com.rev.beans.Player">
+	<bean name="patients" class="com.rev.beans.Patients">
 
 	</bean>
-		<bean name="symptom" class="com.rev.beans.Symptom">
+	<bean name="player" class="com.rev.beans.Player">
+
+	</bean>
+	<bean name="symptom" class="com.rev.beans.Symptom">
 
 	</bean>
 </beans>

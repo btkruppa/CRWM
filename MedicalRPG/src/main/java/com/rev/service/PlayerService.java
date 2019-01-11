@@ -12,24 +12,24 @@ import com.rev.daoimpl.PlayerDaoImpl;
 public class PlayerService {
 
 	PlayerDao pdao = new PlayerDaoImpl();
-	public List<Player> getAllPlayers()
-	{
+
+	public List<Player> getAllPlayers() {
 		return pdao.getallPlayers();
 	}
-	public Player getPlayer(int id)
-	{
+
+	public Player getPlayer(int id) {
 		return pdao.getPlayerByID(id);
 	}
-	public void addPlayer(Player player)
-	{
+
+	public void addPlayer(Player player) {
 		pdao.addPlayer(player);
 	}
-	public void removePlayer(Player player)
-	{
+
+	public void removePlayer(Player player) {
 		pdao.deletePlayer(player);
 	}
-	public void updatePlayer(Player player)
-	{
+
+	public void updatePlayer(Player player) {
 		pdao.updatePlayer(player);
 	}
 }
