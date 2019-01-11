@@ -1,3 +1,5 @@
-<div>
-  <p>dialogue works!</p>
-  </div>
+<div class="text" readonly>
+  <p  id="dialoguetext"></p>
+  <p *ngIf="this.placeholder"><app-thankyoubutton></app-thankyoubutton> OR <app-wrong-hospital-button></app-wrong-hospital-button></p>
+  <p id="introPatient"></p>
+</div>

@@ -6,6 +6,13 @@ import{Injectable} from "@angular/core";
 @Injectable()
 export class Globals{
     isOn:boolean = true;
+    firstButtonOn = true;
+    introStart:string = "> Welcome,  ";
+    introEnd:string = " Congratulations  on  passing  medical  school! Now  your  real  test  begins.";
+    username:string = "CapnKnuckles";
+    patientFirstName:string;
+    patientLastName:string;
+
     setIsOn(value){
         this.isOn = value;
     }

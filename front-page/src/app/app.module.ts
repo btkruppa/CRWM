@@ -15,6 +15,8 @@ import { ClipboardComponent } from './clipboard/clipboard.component';
 import { LoginComponent } from './login/login.component';
 import { Globals } from './global';
 import { GamePageComponent } from './game-page/game-page.component';
+import { ThankyoubuttonComponent } from './thankyoubutton/thankyoubutton.component';
+import { WrongHospitalButtonComponent } from './wrong-hospital-button/wrong-hospital-button.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { GamePageComponent } from './game-page/game-page.component';
     VitalsComponent,
     ClipboardComponent,
     LoginComponent,
-    GamePageComponent
+    GamePageComponent,
+    ThankyoubuttonComponent,
+    WrongHospitalButtonComponent
   ],
   imports: [
     BrowserModule,
