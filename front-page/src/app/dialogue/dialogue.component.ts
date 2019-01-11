@@ -9,13 +9,13 @@ import {Globals} from '../global';
 export class DialogueComponent implements OnInit {
 
   constructor(private globals:Globals) { }
-  placeholder:boolean = false;
+  beginGame:boolean = false;
   ngOnInit() {
     this.startGame();
   }
 
   startGame(){
     document.getElementById("dialoguetext").innerHTML = this.globals.introStart + this.globals.username + "." + this.globals.introEnd;
-    this.placeholder=true;
+    this.globals.sleep(2000).then(() => {this.beginGame = true;})
   }
 }

@@ -17,6 +17,9 @@ import { Globals } from './global';
 import { GamePageComponent } from './game-page/game-page.component';
 import { ThankyoubuttonComponent } from './thankyoubutton/thankyoubutton.component';
 import { WrongHospitalButtonComponent } from './wrong-hospital-button/wrong-hospital-button.component';
+import { ObservebuttonComponent } from './observebutton/observebutton.component';
+import { TestbuttonComponent } from './testbutton/testbutton.component';
+import { QuestionButtonComponent } from './question-button/question-button.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { WrongHospitalButtonComponent } from './wrong-hospital-button/wrong-hosp
     LoginComponent,
     GamePageComponent,
     ThankyoubuttonComponent,
-    WrongHospitalButtonComponent
+    WrongHospitalButtonComponent,
+    ObservebuttonComponent,
+    TestbuttonComponent,
+    QuestionButtonComponent
   ],
   imports: [
     BrowserModule,

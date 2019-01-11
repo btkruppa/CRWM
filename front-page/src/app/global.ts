@@ -7,16 +7,16 @@ import{Injectable} from "@angular/core";
 export class Globals{
     isOn:boolean = true;
     firstButtonOn = true;
+    whichTestButton = false;
     introStart:string = "> Welcome,  ";
-    introEnd:string = " Congratulations  on  passing  medical  school! Now  your  real  test  begins.";
+    introEnd:string = "I'm Dr. Hawk. Congratulations  on  passing  medical  school! Now  your  real  test  begins.";
     username:string = "CapnKnuckles";
     patientFirstName:string;
     patientLastName:string;
+    observableSymptom:string;
+    observation:string = "You notice ";
 
-    setIsOn(value){
-        this.isOn = value;
-    }
-    getIsOn(){
-        return this.isOn;
-    }
+    sleep (time) {
+        return new Promise((resolve) => setTimeout(resolve, time));
+      }
 }
